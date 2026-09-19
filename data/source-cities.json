@@ -1,0 +1,14 @@
+{
+  "_file": "source-cities.json",
+  "_purpose": "Major pilgrim source cities and approximate road travel time to Nashik. Used by the crowd model's weekend day-trip amplifier and (later) by the day-planner's travel-window logic.",
+  "_status": "Distances/times approximate, for modelling only. Verify before showing any travel time to a user.",
+  "last_reviewed": "2026-09-15",
+  "cities": [
+    {"name_en": "Mumbai",    "approx_road_km": 165, "approx_road_hours": 3.5, "daytrip_feasible": true,  "note": "Mega-city; primary weekend day-trip source."},
+    {"name_en": "Pune",      "approx_road_km": 210, "approx_road_hours": 4.5, "daytrip_feasible": true,  "note": "Mega-city; feasible day-trip/overnight."},
+    {"name_en": "Nashik region", "approx_road_km": 30, "approx_road_hours": 1.0, "daytrip_feasible": true, "note": "Local catchment; steady all-week flow."},
+    {"name_en": "Surat",     "approx_road_km": 265, "approx_road_hours": 5.0, "daytrip_feasible": false, "note": "Overnight source."},
+    {"name_en": "Ahmedabad", "approx_road_km": 535, "approx_road_hours": 9.0, "daytrip_feasible": false, "note": "Multi-day source."},
+    {"name_en": "Indore",    "approx_road_km": 430, "approx_road_hours": 8.0, "daytrip_feasible": false, "note": "Multi-day source."}
+  ]
+}

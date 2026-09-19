@@ -1,0 +1,4 @@
+# Build-time only. Not a production dependency.
+# pyswisseph bundles the Moshier analytic ephemeris, so NO external ephemeris
+# data files are needed for the tithi/nakshatra/masa accuracy this engine requires.
+pyswisseph>=2.10.3.2
