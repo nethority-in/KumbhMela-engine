@@ -62,23 +62,26 @@ ssh root@<DROPLET_IP>
 
 TLS cannot be issued until DNS resolves, so do this before the certificate step.
 
-At your registrar (or wherever the zone lives), add **two A records** to this
-server's IP:
+Both records already exist and point at `139.59.46.221`, the Droplet. The apex
+`mahakumbh.net` points at `104.248.165.174`, which is EasyPanel — that is the
+landing page and is a separate machine.
 
-| Type | Host | Value |
-|---|---|---|
-| A | `kumbh` (or your subdomain) | `<DROPLET_IP>` |
-| A | `bot.kumbh` | `<DROPLET_IP>` |
+| Type | Host | Value | Serves |
+|---|---|---|---|
+| A | `@` | `104.248.165.174` | landing page (EasyPanel) |
+| A | `app` | `139.59.46.221` | the guide (this Droplet) |
+| A | `api` | `139.59.46.221` | the bot webhook (this Droplet) |
 
-Verify from your Mac — this is the step people skip and then blame the certbot
-error:
+**Confirm the TTL has actually expired before running certbot.** Certbot validates
+from several public resolvers, and one of them still returning an old answer is
+enough to fail the request. Check from two different networks:
 
 ```bash
-dig +short kumbh.example.com
-dig +short bot.kumbh.example.com
+dig +short app.mahakumbh.net A
+dig +short api.mahakumbh.net A
 ```
 
-Both must return the Droplet IP. `whatsmydns.net` is a good second opinion, since
+Both must return `139.59.46.221`. `whatsmydns.net` is a good second opinion, since
 your own resolver may still be caching the old answer.
 
 ## E. Run the bootstrap
@@ -88,8 +91,8 @@ Still on the Droplet as root:
 ```bash
 git clone git@github.com:nethority-in/KumbhMela-engine.git /tmp/kumbh-engine
 sudo bash /tmp/kumbh-engine/deploy/droplet/bootstrap.sh \
-  kumbh.example.com \
-  bot.kumbh.example.com
+  app.mahakumbh.net \
+  api.mahakumbh.net
 ```
 
 It is idempotent, so re-running is safe. It installs the packages, Node 22, the
@@ -108,7 +111,7 @@ Expect `{"ok":true,"dry_run":true,"days":102,...}`.
 
 ```bash
 apt-get install -y certbot python3-certbot-nginx
-certbot --nginx -d kumbh.example.com -d bot.kumbh.example.com
+certbot --nginx -d app.mahakumbh.net -d api.mahakumbh.net
 ```
 
 Answer **Y** to redirect HTTP to HTTPS. Certbot also installs a renewal timer;
@@ -133,7 +136,7 @@ worse than no date. Once a panchang authority has ruled on it, re-run with
    sudo grep WEBHOOK_VERIFY_TOKEN /etc/kumbh-bot.env
    ```
 2. Meta Business Suite → **WhatsApp → API Setup**
-   - Webhook URL: `https://bot.kumbh.example.com/webhook`
+   - Webhook URL: `https://api.mahakumbh.net/webhook`
    - Verify token: the value above
    - Subscribe to: `messages`
 3. Send a message to the business number and watch the log:
