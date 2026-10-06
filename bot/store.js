@@ -128,7 +128,7 @@ function check(phone, g) {
 
 /* Logs spend. Counters were already consumed by check(), so they are not
    touched here - this must stay the single place Meta cost is accounted. */
-function record(phone, intent, usedLlm, g) {
+function record(phone, intent, usedLlm, g, lang) {
   const nowDay = today();
   const h = hashPhone(phone);
   let r = perNumber.get(h);
@@ -160,6 +160,7 @@ function record(phone, intent, usedLlm, g) {
     intent,
     outbound_count: 1,
     used_llm: !!usedLlm,
+    lang: lang || "en",
     meta_inr: metaInr,
     llm_inr: llmInr,
     window_state: billable ? "free_allowance" : "billable",
