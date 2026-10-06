@@ -73,6 +73,19 @@ you must install:
 - **Node.js 20 LTS** — for the website (D3) and bot (D4), later.
 - **git** — for versioning the data table + changelog.
 
+> **Update (2026-10-06):** the pipeline and the bot have now actually been run —
+> Python 3.14 and Node 22 were available after all. See `CHANGELOG.md` for what
+> the first run produced and the one tithi mismatch it surfaced. The prerequisites
+> above are kept as written originally.
+
+## Deployment
+
+Deployment targets are not yet fixed. `DEPLOY.md` states what each component
+requires so it can be hosted anywhere; the backend's two real constraints are a
+**stable public HTTPS URL** (Meta registers one webhook for the whole mela) and a
+**persistent writable volume** (without it the monthly free-message accounting
+resets on every restart).
+
 Why Python for the engine despite the site being Node: `pyswisseph` is the
 reference binding to Swiss Ephemeris, the computation Indian professional
 panchangs rely on. The engine is a rare, developer-run build step, so a

@@ -81,10 +81,20 @@ curl -s "localhost:8080/webhook?hub.mode=subscribe&hub.verify_token=<token>&hub.
 4. Confirm the bot never says safe/unsafe. `npm test` asserts it on every
    language; re-run it after any copy change.
 
-## Deploy on EasyPanel
+## Deploy
 
-- **App** service, builder **Dockerfile**, path `bot/Dockerfile`.
-- **Port** 8080, and attach a domain so Meta can reach the webhook.
-- Add `BOT_DATA_DIR=/app/state` as a **storage mount**, or the monthly
-  free-allowance accounting resets on every redeploy.
-- Secrets go in the service's Environment section, never in git.
+Requirements, not steps — the platform is not yet decided. See `../DEPLOY.md`
+for the full version and the two constraints that narrow the choice.
+
+- **Runtime:** Node 22. Nothing to install; there are no dependencies.
+- **Port:** from `PORT` (default 8080), must bind `0.0.0.0`.
+- **Storage:** mount `BOT_DATA_DIR` on a **persistent** volume. Without it the
+  monthly free-allowance accounting resets on every restart and spend is
+  over-counted.
+- **Public HTTPS:** required. Meta registers one webhook URL and it must stay
+  valid until Sept 2027.
+- **Secrets:** set them in the host's environment/secret store, never in git.
+  Use `bot/.env.example` as the checklist.
+- **Health check:** `GET /healthz`.
+
+`bot/Dockerfile` is provided for any Docker-based host.

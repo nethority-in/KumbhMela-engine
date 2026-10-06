@@ -115,19 +115,24 @@ falls under the DPDP work in D7.
 
 ---
 
-## 3. Deployment (already done for the current site)
+## 3. Deployment
 
-| Layer | Current setup |
+EasyPanel hosts the **landing page only**. The website and the backend are
+intended for a different host, not yet chosen. See `DEPLOY.md` for what each
+component requires.
+
+| Layer | State |
 |---|---|
-| Repos | `nethority-in/KumbhMela-` (site), `nethority-in/KumbhMela-engine` (pipeline) |
-| Site hosting | EasyPanel **App** service, nginx Dockerfile at repo root, port 80 |
-| CI/CD | EasyPanel Auto Deploy (GitHub webhook) — every push to `main` rebuilds |
-| HTTPS | Let's Encrypt via EasyPanel domain resolver |
-| Pipeline | Second App service, `Dockerfile` runs `panchang_engine.py` then `score.py` |
+| Repos | `nethority-in/KumbhMela-` (site), `nethority-in/KumbhMela-engine` (pipeline + bot) |
+| Website | Static `index.html` + `data/calendar.json`. Needs only a web server — no build step, no runtime |
+| Auto Deploy | Enabled where the repo is hosted; every push to `main` redeploys |
+| Backend | Node 22, zero dependencies, one port, and a **persistent** volume for `BOT_DATA_DIR` |
 
-**Known gap:** `data/dist/calendar.json` generated inside a container is
-ephemeral. Before D3 goes live, decide persistence — either commit the generated
-artifact, or mount storage so the site can read a stable file.
+**Two things that are not yet settled:**
+- The target platform for the website and the bot.
+- Whether `calendar.json` is committed as an artifact (current approach) or
+  served from a mounted volume. Committing keeps the site a pure static build;
+  a volume keeps the pipeline as the single source of truth at runtime.
 
 ---
 
