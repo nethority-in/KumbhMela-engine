@@ -1,0 +1,202 @@
+[
+  {
+    "id": "en-001",
+    "lang": "en",
+    "question": "which days are auspicious",
+    "intent": "dates",
+    "must_contain": ["2 August 2027", "31 August 2027", "11 September 2027"],
+    "must_not_contain": ["safe", "unsafe", "avoid", "best day"],
+    "note": "The three royal baths must all appear, with their dates."
+  },
+  {
+    "id": "en-002",
+    "lang": "en",
+    "question": "2 august",
+    "intent": "day_detail",
+    "must_contain": ["2 August 2027"],
+    "must_not_contain": ["safe", "unsafe", "!"],
+    "note": "A specific date returns that day, not the whole list."
+  },
+  {
+    "id": "en-003",
+    "lang": "en",
+    "question": "which day is less crowded",
+    "intent": "quiet",
+    "must_contain": ["estimated"],
+    "must_not_contain": ["safe", "unsafe", "avoid", "best day"],
+    "note": "Quiet days must still be framed as estimates, never as a recommendation to skip."
+  },
+  {
+    "id": "en-004",
+    "lang": "en",
+    "question": "how crowded will it be",
+    "intent": "crowd",
+    "must_contain": ["estimate", "Very High", "High", "Moderate", "Lower"],
+    "must_not_contain": ["safe", "unsafe"],
+    "note": "Must name the four bands and state they come from rules, not attendance."
+  },
+  {
+    "id": "en-005",
+    "lang": "en",
+    "question": "emergency helpline number",
+    "intent": "helpline",
+    "must_contain": ["112"],
+    "must_not_contain": ["safe"],
+    "note": "112 only. No invented mela control-room number."
+  },
+  {
+    "id": "en-006",
+    "lang": "en",
+    "question": "which akhara bathes at ramkund",
+    "intent": "akhara",
+    "must_contain": ["confirm"],
+    "must_not_contain": ["Vaishnava", "Shaiva"],
+    "note": "Sources disagree on C1. The bot must decline and point to the authorities."
+  },
+  {
+    "id": "en-007",
+    "lang": "en",
+    "question": "how do I reach nashik by train",
+    "intent": "reach",
+    "must_contain": ["website"],
+    "must_not_contain": ["km", "hours"],
+    "note": "Travel routes are not in the data. Must refuse and redirect, not guess a distance."
+  },
+  {
+    "id": "en-008",
+    "lang": "en",
+    "question": "ramkund or kushavarta for snan",
+    "intent": "waters",
+    "must_contain": ["Ramkund", "Kushavarta"],
+    "must_not_contain": ["safe"],
+    "note": "Names both waters and hedges the akhara arrangement."
+  },
+  {
+    "id": "en-009",
+    "lang": "en",
+    "question": "11/9/2027",
+    "intent": "day_detail",
+    "must_contain": ["11 September 2027"],
+    "must_not_contain": ["!"],
+    "note": "Slashed numeric date form must parse."
+  },
+  {
+    "id": "en-010",
+    "lang": "en",
+    "question": "thanks a lot",
+    "intent": "thanks",
+    "must_contain": ["welcome"],
+    "must_not_contain": ["!"],
+    "note": "Short, warm, no exclamation mark."
+  },
+
+  {
+    "id": "hi-001",
+    "lang": "hi",
+    "question": "कौन से दिन शुभ हैं",
+    "intent": "dates",
+    "must_contain": ["अगस्त", "सितंबर"],
+    "must_not_contain": ["safe", "unsafe", "avoid", "!"],
+    "note": "Hindi greeting of the same question; must answer in Hindi."
+  },
+  {
+    "id": "hi-002",
+    "lang": "hi",
+    "question": "भीड़ कितनी है",
+    "intent": "crowd",
+    "must_contain": ["अनुमान"],
+    "must_not_contain": ["safe", "unsafe", "!"],
+    "note": "Every crowd figure labelled अनुमानित in Hindi."
+  },
+  {
+    "id": "hi-003",
+    "lang": "hi",
+    "question": "शांत दिन कौन से",
+    "intent": "quiet",
+    "must_contain": ["अनुमानित"],
+    "must_not_contain": ["बचें", "टालें", "!"],
+    "note": "Hindi must not slip into 'बचें/टालें' (avoid/skip) framing."
+  },
+  {
+    "id": "hi-004",
+    "lang": "hi",
+    "question": "आपातकालीन नंबर",
+    "intent": "helpline",
+    "must_contain": ["112"],
+    "must_not_contain": ["!"],
+    "note": "Hindi emergency number request."
+  },
+  {
+    "id": "hi-005",
+    "lang": "hi",
+    "question": "कैसे पहुंचें नाशिक",
+    "intent": "reach",
+    "must_contain": ["वेबसाइट"],
+    "must_not_contain": ["किमी", "घंटे"],
+    "note": "Refuses to invent routes, in Hindi."
+  },
+  {
+    "id": "hi-006",
+    "lang": "hi",
+    "question": "नमस्ते",
+    "intent": "greet",
+    "must_contain": ["नमस्ते"],
+    "must_not_contain": ["!"],
+    "note": "Hindi greeting."
+  },
+
+  {
+    "id": "mr-001",
+    "lang": "mr",
+    "question": "कोणते दिवस शुभ आहेत",
+    "intent": "dates",
+    "must_contain": ["ऑगस्ट", "सप्टेंबर"],
+    "must_not_contain": ["safe", "unsafe", "avoid", "!"],
+    "note": "Marathi must be detected as mr, not silently answered in Hindi."
+  },
+  {
+    "id": "mr-002",
+    "lang": "mr",
+    "question": "भीड किती आहे",
+    "intent": "crowd",
+    "must_contain": ["अंदाजे"],
+    "must_not_contain": ["safe", "unsafe", "!"],
+    "note": "Marathi estimate wording is अंदाजे."
+  },
+  {
+    "id": "mr-003",
+    "lang": "mr",
+    "question": "कोणता दिवस शांत आहे",
+    "intent": "quiet",
+    "must_contain": ["अंदाजे"],
+    "must_not_contain": ["टाळा", "!"],
+    "note": "Marathi must not slip into 'टाळा' (skip) framing."
+  },
+  {
+    "id": "mr-004",
+    "lang": "mr",
+    "question": "आणीबाणी क्रमांक",
+    "intent": "helpline",
+    "must_contain": ["112"],
+    "must_not_contain": ["!"],
+    "note": "Marathi emergency number request."
+  },
+  {
+    "id": "mr-005",
+    "lang": "mr",
+    "question": "त्रिम्बकेश्वर कुठे",
+    "intent": "waters",
+    "must_contain": ["कुषावर्त", "त्रिम्बकेश्वर"],
+    "must_not_contain": ["!"],
+    "note": "Marathi place question, answered in Marathi."
+  },
+  {
+    "id": "mr-006",
+    "lang": "mr",
+    "question": "नमस्कार",
+    "intent": "greet",
+    "must_contain": ["नमस्कार"],
+    "must_not_contain": ["!"],
+    "note": "Marathi greeting."
+  }
+]

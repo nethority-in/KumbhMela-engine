@@ -21,8 +21,8 @@ function detectLang(text) {
       "बताइए", "बताएं", "जानना", "चाहिए", "कितने"];
     if (hiOnly.some((w) => t.includes(w))) return "hi";
     const mrOnly = ["किती", "आहे", "आहेत", "काय", "कुठे", "कुठला", "कुठली", "नमस्कार",
-      "मेळा", "भेड", "भीड", "स्नानाचे", "स्नानाचा", "दिवसाचे", "आणि", "माहिती",
-      "सांग", "दिले", "नाही", "पोहोच", "अंदाज", "स्वागत"];
+      "मेळा", "भेड", "भीड", "स्नानाचे", "स्नानाचा", "दिवसाचे", "आणि", "आणीबाणी",
+      "आणिबाणी", "क्रमांक", "माहिती", "सांग", "दिले", "नाही", "पोहोच", "अंदाज", "स्वागत"];
     if (mrOnly.some((w) => t.includes(w))) return "mr";
     return "hi";
   }
@@ -35,25 +35,30 @@ function norm(s) {
   return s.toLowerCase().replace(/[^\p{L}\p{N}\p{M}\s]/gu, " ").replace(/\s+/g, " ").trim();
 }
 
+/* Order matters: the first match wins, so the more specific intents come first.
+   "reach" precedes "waters" because a Hindi question like "कैसे पहुंचें नाशिक"
+   contains नाशिक, and would otherwise be answered about the water instead of travel. */
 const INTENTS = [
   { id: "thanks", any: ["thanks", "thank you", "dhanyavad", "धन्यवाद", "आभारी"] },
   { id: "helpline", any: ["emergency", "helpline", "help", "112", "police", "ambulance",
-    "आपात", "मदद", "112", "पोलीस", "अंबुलेंस", "आणीबाणी", "मदत"] },
+    "आपात", "मदद", "112", "पोलीस", "अंबुलेंस", "आणीबाणी", "आणिबाणी", "मदत"] },
   { id: "akhara", any: ["akhara", "sadhu", "order", "sect", "अखारा", "साधु", "संप्रदाय", "अखारे", "संत"] },
-  { id: "waters", any: ["ramkund", "ram kund", "kushavarta", "trimbak", "nashik river",
-    "which water", "where to bath", "रामकुंड", "कुषावर्त", "त्रिम्बकेश्वर", "नाशिक", "कौन सा जल", "पाणी", "स्नान"] },
+  /* "कुठे" is deliberately absent: it is a bare "where", so "त्रिम्बकेश्वर कुठे"
+     is a question about the site, not about travel. Travel needs पोहोचे/गाडी. */
+  { id: "reach", any: ["reach", "how to go", "train", "bus", "road", "airport", "station",
+    "कैसे", "कसे", "पहुंच", "पोहोच", "ट्रेन", "बस", "सड़क", "सडक", "हवाई", "स्टेशन",
+    "पोहोचे", "गाडी"] },
   { id: "quiet", any: ["quiet", "less crowd", "less crowded", "fewer people", "calm", "peaceful",
     "low crowd", "शांत", "कम भीड़", "कम लोग", "शांत दिन", "शांतता",
     "शांत", "कमी भीड", "कमी लोक", "स्वच्छ"] },
   { id: "crowd", any: ["crowd", "crowded", "busy", "how many people", "भीड़", "कितने लोग", "भिड",
     "भीड", "किती लोक"] },
-  { id: "reach", any: ["reach", "how to go", "train", "bus", "road", "airport", "station",
-    "कैसे", "कसे", "पहुंच", "पोहोच", "ट्रेन", "बस", "सड़क", "सडक", "हवाई", "स्टेशन",
-    "कुठे", "पोहोचे", "गाडी", "बस"] },
+  { id: "waters", any: ["ramkund", "ram kund", "kushavarta", "trimbak", "nashik river",
+    "which water", "where to bath", "रामकुंड", "कुषावर्त", "त्रिम्बकेश्वर", "नाशिक", "कौन सा जल", "पाणी", "स्नान"] },
   { id: "dates", any: ["which day", "what day", "dates", "list", "all days", "auspicious",
     "कौन से दिन", "कौनसा दिन", "तारीख", "सभी दिन", "सूची", "शुभ दिन",
     "कोणते दिवस", "कोणता दिवस", "तारीखा", "सर्व दिवस", "यादी", "शुभ दिवस"] },
-  { id: "greet", any: ["hi", "hello", "hey", "namaste", "namaskar", "start", "help",
+  { id: "greet", any: ["hi", "hello", "hey", "namaste", "namaskar", "start",
     "नमस्ते", "नमस्कार", "शुरू", "मदद", "हेलो", "नमस्"] },
 ];
 
