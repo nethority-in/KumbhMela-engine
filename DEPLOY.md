@@ -1,13 +1,11 @@
-# Deployment — platform-neutral
+# Deployment
 
-*Deployment target is not yet decided. This document states what each component
-**requires** so it can be dropped onto any host. It is deliberately not a
-click-by-click guide for one vendor, because that would need rewriting the
-moment the platform is chosen.*
+*Host for the website and backend: **DigitalOcean App Platform**. EasyPanel serves
+the landing page only.*
 
-EasyPanel currently serves the **landing page only**. The website (the guide) and
-the backend (the WhatsApp bot) are meant to be deployed elsewhere. Nothing in the
-code is tied to EasyPanel — it was the first host tried, not a dependency.
+This document states what each component **requires**, then gives App Platform
+steps. The requirements section stays platform-neutral on purpose — moving hosts
+later should mean re-reading the top half only.
 
 ---
 
@@ -107,18 +105,130 @@ design — the site and bot are read-only consumers of a static JSON file.
 
 ---
 
-## Choosing a platform — the two real constraints
+## DigitalOcean App Platform — step by step
 
-Most of this is free-tier judgement, but two things genuinely narrow the choice:
+App Platform suits this project because it already provides the two things it
+needs: an **assigned `$PORT`** and a **persistent volume**. It also gives
+automatic HTTPS, which Meta requires.
 
-**A stable HTTPS URL for the bot.** Meta registers one webhook URL. It must stay
-valid from now until Sept 2027. Avoid anything that sleeps, redeploys to a new
-host, or gives you a changing URL (many preview-deploy services do this).
+A Droplet with hand-rolled nginx and systemd works too, and is cheaper at
+comparable performance. App Platform costs more but removes the ops work, which
+matters here because the site must stay up unattended from launch until Sept 2027.
 
-**A persistent writable volume.** Free tiers commonly offer ephemeral filesystems.
-That breaks the free-allowance accounting described above. Check this before
-committing to a host.
+### Step 1 — connect the GitHub account
 
-Everything else — provider, region, language runtime support — is ordinary
-choice. A Railway/Render/Fly/Cloud Run style Node service and a static host for
-the guide covers the whole project.
+**Account → Integrations → GitHub → Connect.** This is what enables auto-deploy
+on every push to `main`. Without it you will be redeploying by hand.
+
+### Step 2 — the website (the guide)
+
+**Create → App Platform → App → From a GitHub repository**
+
+| Field | Value |
+|---|---|
+| Repository | `nethority-in/KumbhMela-` |
+| Branch | `main` |
+| Build method | **Dockerfile** (auto-detected) |
+| Dockerfile path | `Dockerfile` |
+| HTTP Port | `8080` |
+
+The Dockerfile uses `nginxinc/nginx-unprivileged`, which listens on `8080` and
+does not run as root. The port comes from `$PORT` via an envsubst template, so if
+DO assigns something else it still binds correctly.
+
+### Step 3 — the backend (the bot)
+
+**Create → App Platform → App → From a GitHub repository**
+
+| Field | Value |
+|---|---|
+| Repository | `nethority-in/KumbhMela-engine` |
+| Branch | `main` |
+| Build method | **Dockerfile** |
+| Dockerfile path | `bot/Dockerfile` |
+| HTTP Port | `8080` |
+
+Then:
+
+1. **Environment** — add these as secrets, not plain values:
+
+   ```
+   DRY_RUN=true
+   WEBHOOK_VERIFY_TOKEN=<any long random string>
+   WHATSAPP_TOKEN=<from Meta>
+   WHATSAPP_PHONE_ID=<from Meta>
+   BOT_HASH_SALT=<generated once>
+   START_LANG=auto
+   ```
+
+2. **Storage** — attach a volume mounted at `/app/state`, and confirm
+   `BOT_DATA_DIR=/app/state`. **This step is what keeps the monthly
+   free-allowance accounting intact.** Without a persistent volume, every deploy
+   resets the counter and spend is over-counted against the 1,000 free messages.
+
+3. **Health check** — HTTP GET on `/healthz`.
+
+Leave `DRY_RUN=true` until the answers have been reviewed, then switch to
+`false` and redeploy.
+
+### Step 4 — the domain and the Meta webhook
+
+1. Attach the domain to the bot app. App Platform provisions the TLS
+   certificate.
+2. **The URL must not change.** Do not rename or move the app after Meta has the
+   webhook registered.
+3. In the Meta dashboard, set the webhook to `https://<bot-domain>/webhook`,
+   subscribe to `messages`, and paste `WEBHOOK_VERIFY_TOKEN`.
+4. Send a message to the business number and check the app's logs — you should
+   see a `[bot] <intent>/<lang>` line.
+
+### Step 5 — order of operations
+
+The bot's image embeds `data/dist/calendar.json`, so it must be committed before
+the bot is first deployed. Recommended sequence:
+
+1. Run the pipeline locally, read the self-check
+2. Commit `calendar.json` to the site repo and to `data/dist/` in the engine repo
+3. Deploy the site
+4. Deploy the bot with `DRY_RUN=true`, smoke-test it
+5. Only then start Meta verification
+
+### Step 6 — updating the data later
+
+1. Edit `data/golden-source.json` or `crowd-model/weights.config.json`
+2. Run the pipeline, read the self-check
+3. Commit `calendar.json` into the site repo's `data/`
+4. Push — auto-deploy rebuilds the site
+
+**Do not redeploy the bot for a data change.** Its image embeds the JSON, so a
+bot redeploy does pick up new data, but there is no reason to trigger one unless
+the bot code itself changed.
+
+### First-build caveat
+
+The site Dockerfile has not been built locally — there was no Docker on the build
+machine. The first App Platform build is the real test. If it fails, the most
+likely cause is the envsubst template path; the fix is to verify
+`/etc/nginx/templates/default.conf.template` exists in the image, since the
+unprivileged image renders that directory at startup.
+
+---
+
+## The two constraints that actually narrow the choice
+
+Most of hosting is free-tier judgement. Two things genuinely are not:
+
+**A stable HTTPS URL for the bot.** Meta registers one webhook URL and it must
+stay valid until Sept 2027. Avoid anything that sleeps, redeploys to a new host,
+or hands out changing URLs — many preview-deploy services do exactly that.
+
+**A persistent writable volume.** Ephemeral filesystems break the
+free-allowance accounting described above. This is the single most common way a
+free-tier deployment of this bot ends up silently overspending.
+
+**A Droplet alternative.** If cost matters more than ops, one Ubuntu Droplet
+running nginx for the site plus a systemd unit for the bot does the same job, and
+the persistent-volume problem disappears because a Droplet is a real filesystem.
+It is more manual, and it is the version to pick if nobody wants to be on call
+until 2027.
+
