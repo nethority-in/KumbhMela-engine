@@ -161,8 +161,9 @@ def local_sunrise_jd(d: date) -> float:
     local_midnight = datetime(d.year, d.month, d.day, 0, 0, tzinfo=IST)
     start_jd = jd_ut(local_midnight)
     res = swe.rise_trans(
-        start_jd, swe.SUN, REF_LON, REF_LAT, 0.0, 0.0,
-        0.0, swe.FLG_MOSEPH | swe.CALC_RISE | swe.BIT_DISC_CENTER,
+        start_jd, swe.SUN, swe.CALC_RISE, (REF_LON, REF_LAT, 0.0),
+        0.0, 0.0,
+        swe.FLG_MOSEPH | swe.BIT_DISC_CENTER,
     )
     # pyswisseph returns (retflag, (tret,...)); tret[0] is the rise time (JD UT).
     return res[1][0]

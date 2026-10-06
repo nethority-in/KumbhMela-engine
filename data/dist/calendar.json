@@ -1,0 +1,3232 @@
+{
+  "_generated_by": "crowd-model/score.py",
+  "_contract": "This is the static artifact the website (D3) and bot (D4) consume. Read-only.",
+  "_honesty": "All crowd figures are estimates, never safe/unsafe. Weights: crowd-model/weights.config.json.",
+  "weights_version": "0.1.0-draft",
+  "table_version": "0.1.0-draft",
+  "day_count": 102,
+  "days": [
+    {
+      "gregorian_date": "2026-11-05",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Uttara Phalguni",
+        "masa": "Ashwina",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2026-11-09",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Swati",
+        "masa": "Ashwina",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2026-11-17",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ashtami",
+        "nakshatra": "Dhanishta",
+        "masa": "Kartika",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2026-11-24",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Krittika",
+        "masa": "Kartika",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2026-12-04",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Hasta",
+        "masa": "Kartika",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2026-12-08",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Anuradha",
+        "masa": "Kartika",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2026-12-17",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ashtami",
+        "nakshatra": "Purva Bhadrapada",
+        "masa": "Margashirsha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2026-12-20",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Ashwini",
+        "masa": "Margashirsha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-01-03",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Vishakha",
+        "masa": "Margashirsha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-01-07",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Purva Ashadha",
+        "masa": "Margashirsha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-01-15",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Saptami",
+        "nakshatra": "Revati",
+        "masa": "Pausha",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-01-19",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Rohini",
+        "masa": "Pausha",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-01-22",
+      "classification": "parva_snan_major",
+      "score": 42,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Punarvasu",
+        "masa": "Pausha",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-02-02",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Jyeshtha",
+        "masa": "Pausha",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-02-06",
+      "classification": "parva_snan_major",
+      "score": 50,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Saturday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Shravana",
+        "masa": "Pausha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-02-14",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ashtami",
+        "nakshatra": "Krittika",
+        "masa": "Magha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-02-17",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Ardra",
+        "masa": "Magha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-03-03",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Purva Ashadha",
+        "masa": "Magha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-03-04",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Uttara Ashadha",
+        "masa": "Magha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-03-08",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Shatabhisha",
+        "masa": "Magha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-03-16",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ashtami",
+        "nakshatra": "Mrigashira",
+        "masa": "Phalguna",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-03-18",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Pushya",
+        "masa": "Phalguna",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-03-22",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Uttara Phalguni",
+        "masa": "Phalguna",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-04-02",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Shravana",
+        "masa": "Phalguna",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-04-06",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Uttara Bhadrapada",
+        "masa": "Phalguna",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-04-15",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Navami",
+        "nakshatra": "Pushya",
+        "masa": "Chaitra",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-04-17",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Saturday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Magha",
+        "masa": "Chaitra",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-04-20",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Chitra",
+        "masa": "Chaitra",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-05-02",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Purva Bhadrapada",
+        "masa": "Chaitra",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-05-06",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Bharani",
+        "masa": "Chaitra",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-05-16",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Uttara Phalguni",
+        "masa": "Vaishakha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-05-20",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Vishakha",
+        "masa": "Vaishakha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-06-01",
+      "classification": "auspicious_minor",
+      "score": 18,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Revati",
+        "masa": "Vaishakha",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-06-04",
+      "classification": "parva_snan_major",
+      "score": 37,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Friday — leading edge of the weekend; Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Krittika",
+        "masa": "Vaishakha",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-06-14",
+      "classification": "auspicious_minor",
+      "score": 18,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Chitra",
+        "masa": "Jyeshtha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-06-16",
+      "classification": "auspicious_minor",
+      "score": 18,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Trayodashi",
+        "nakshatra": "Vishakha",
+        "masa": "Jyeshtha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-06-18",
+      "classification": "parva_snan_major",
+      "score": 37,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Friday — leading edge of the weekend; Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Jyeshtha",
+        "masa": "Jyeshtha",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-06-19",
+      "classification": "parva_snan_major",
+      "score": 45,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Saturday — weekend surge; Heavy monsoon week — marginally dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Mula",
+        "masa": "Jyeshtha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-06-30",
+      "classification": "auspicious_minor",
+      "score": 18,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Bharani",
+        "masa": "Jyeshtha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-07-04",
+      "classification": "parva_snan_major",
+      "score": 42,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Sunday — weekend surge; Peak monsoon week — slightly dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Ardra",
+        "masa": "Jyeshtha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-07-14",
+      "classification": "auspicious_minor",
+      "score": 15,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Anuradha",
+        "masa": "Ashadha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-07-17",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Saturday — weekend surge; Peak monsoon week — slightly dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Chaturdashi",
+        "nakshatra": "Mula",
+        "masa": "Ashadha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-07-18",
+      "classification": "parva_snan_major",
+      "score": 42,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Sunday — weekend surge; Peak monsoon week — slightly dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Purva Ashadha",
+        "masa": "Ashadha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-08-02",
+      "classification": "amrit_snan",
+      "score": 55,
+      "band": {
+        "key": "high",
+        "label_en": "High",
+        "label_hi": "अधिक",
+        "label_mr": "जास्त"
+      },
+      "headline_reason": "Royal bath (Amrit Snan) — estimated High crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 60,
+          "reason": "Royal-bath days concentrate the entire mela's attention and akhara processions onto one date."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Pushya",
+        "masa": "Ashadha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-08-12",
+      "classification": "auspicious_minor",
+      "score": 15,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Jyeshtha",
+        "masa": "Shravana",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-08-17",
+      "classification": "parva_snan_major",
+      "score": 30,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Major bathing day — estimated Lower crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Dhanishta",
+        "masa": "Shravana",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-08-18",
+      "classification": "auspicious_minor",
+      "score": 15,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Pratipada",
+        "nakshatra": "Shatabhisha",
+        "masa": "Shravana",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-08-28",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Saturday — weekend surge; Within 3 days of a royal bath — spillover; Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 8,
+          "reason": "Within 3 days of a royal bath — spillover"
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Ardra",
+        "masa": "Shravana",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-08-31",
+      "classification": "amrit_snan",
+      "score": 55,
+      "band": {
+        "key": "high",
+        "label_en": "High",
+        "label_hi": "अधिक",
+        "label_mr": "जास्त"
+      },
+      "headline_reason": "Royal bath (Amrit Snan) — estimated High crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 60,
+          "reason": "Royal-bath days concentrate the entire mela's attention and akhara processions onto one date."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Magha",
+        "masa": "Shravana",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-09-11",
+      "classification": "amrit_snan",
+      "score": 70,
+      "band": {
+        "key": "high",
+        "label_en": "High",
+        "label_hi": "अधिक",
+        "label_mr": "जास्त"
+      },
+      "headline_reason": "Royal bath (Amrit Snan) — estimated High crowd (Saturday — weekend surge; Heavy monsoon week — marginally dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 60,
+          "reason": "Royal-bath days concentrate the entire mela's attention and akhara processions onto one date."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Uttara Ashadha",
+        "masa": "Bhadrapada",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-09-15",
+      "classification": "parva_snan_major",
+      "score": 37,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Within a week of a royal bath — outer spillover; Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 4,
+          "reason": "Within a week of a royal bath — outer spillover"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Shatabhisha",
+        "masa": "Bhadrapada",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-09-18",
+      "classification": "auspicious_minor",
+      "score": 34,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Saturday — weekend surge; Within a week of a royal bath — outer spillover; Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 4,
+          "reason": "Within a week of a royal bath — outer spillover"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Dwitiya",
+        "nakshatra": "Revati",
+        "masa": "Bhadrapada",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-09-26",
+      "classification": "auspicious_minor",
+      "score": 30,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Sunday — weekend surge; Heavy monsoon week — marginally dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Pushya",
+        "masa": "Bhadrapada",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-09-30",
+      "classification": "parva_snan_major",
+      "score": 33,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Major bathing day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Hasta",
+        "masa": "Bhadrapada",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-10-11",
+      "classification": "auspicious_minor",
+      "score": 20,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (religious significance).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Dhanishta",
+        "masa": "Ashwina",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-10-15",
+      "classification": "parva_snan_major",
+      "score": 39,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Friday — leading edge of the weekend).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Revati",
+        "masa": "Ashwina",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-10-18",
+      "classification": "auspicious_minor",
+      "score": 20,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (religious significance).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Tritiya",
+        "nakshatra": "Krittika",
+        "masa": "Ashwina",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-10-25",
+      "classification": "auspicious_minor",
+      "score": 20,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (religious significance).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Magha",
+        "masa": "Ashwina",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-10-29",
+      "classification": "parva_snan_major",
+      "score": 39,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Friday — leading edge of the weekend).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Chitra",
+        "masa": "Ashwina",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-11-10",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Uttara Bhadrapada",
+        "masa": "Kartika",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-11-14",
+      "classification": "parva_snan_major",
+      "score": 50,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Bharani",
+        "masa": "Kartika",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-11-17",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Chaturthi",
+        "nakshatra": "Ardra",
+        "masa": "Kartika",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-11-24",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Hasta",
+        "masa": "Kartika",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-11-28",
+      "classification": "parva_snan_major",
+      "score": 50,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Anuradha",
+        "masa": "Kartika",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2027-12-09",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Revati",
+        "masa": "Margashirsha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-12-13",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Rohini",
+        "masa": "Margashirsha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-12-17",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Chaturthi",
+        "nakshatra": "Pushya",
+        "masa": "Margashirsha",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2027-12-23",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Swati",
+        "masa": "Margashirsha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2027-12-27",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Mula",
+        "masa": "Margashirsha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-01-08",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Saturday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Krittika",
+        "masa": "Pausha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-01-12",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Punarvasu",
+        "masa": "Pausha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-01-15",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Saturday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Chaturthi",
+        "nakshatra": "Magha",
+        "masa": "Pausha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-01-22",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Saturday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Anuradha",
+        "masa": "Pausha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-01-26",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Uttara Ashadha",
+        "masa": "Pausha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-02-07",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Mrigashira",
+        "masa": "Magha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-02-10",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Ashlesha",
+        "masa": "Magha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-02-14",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Panchami",
+        "nakshatra": "Hasta",
+        "masa": "Magha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-02-20",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Mula",
+        "masa": "Magha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-02-25",
+      "classification": "parva_snan_major",
+      "score": 42,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Shatabhisha",
+        "masa": "Magha",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2028-03-07",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Punarvasu",
+        "masa": "Phalguna",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-03-15",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Panchami",
+        "nakshatra": "Vishakha",
+        "masa": "Phalguna",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-03-21",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Shravana",
+        "masa": "Phalguna",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-03-26",
+      "classification": "parva_snan_major",
+      "score": 50,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Uttara Bhadrapada",
+        "masa": "Phalguna",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-04-09",
+      "classification": "parva_snan_major",
+      "score": 50,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Sunday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Hasta",
+        "masa": "Chaitra",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-04-14",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Panchami",
+        "nakshatra": "Jyeshtha",
+        "masa": "Chaitra",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2028-04-20",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Shatabhisha",
+        "masa": "Chaitra",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-04-24",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Ashwini",
+        "masa": "Chaitra",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-05-05",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Friday — leading edge of the weekend; Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 4,
+          "reason": "Friday — leading edge of the weekend"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Uttara Phalguni",
+        "masa": "Vaishakha",
+        "weekday": "Shukravar"
+      }
+    },
+    {
+      "gregorian_date": "2028-05-08",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Swati",
+        "masa": "Vaishakha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-05-15",
+      "classification": "auspicious_minor",
+      "score": 23,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Saptami",
+        "nakshatra": "Shravana",
+        "masa": "Vaishakha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-05-20",
+      "classification": "auspicious_minor",
+      "score": 35,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Auspicious day — estimated Moderate crowd (Saturday — weekend surge; Drier week — slightly higher turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Uttara Bhadrapada",
+        "masa": "Vaishakha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-05-24",
+      "classification": "parva_snan_major",
+      "score": 38,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Drier week — slightly higher turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 3,
+          "reason": "Drier week — slightly higher turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Krittika",
+        "masa": "Vaishakha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-06-03",
+      "classification": "auspicious_minor",
+      "score": 30,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Saturday — weekend surge; Heavy monsoon week — marginally dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Chitra",
+        "masa": "Jyeshtha",
+        "weekday": "Shanivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-06-07",
+      "classification": "parva_snan_major",
+      "score": 33,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Major bathing day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Jyeshtha",
+        "masa": "Jyeshtha",
+        "weekday": "Budhvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-06-15",
+      "classification": "auspicious_minor",
+      "score": 18,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ashtami",
+        "nakshatra": "Purva Bhadrapada",
+        "masa": "Jyeshtha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-06-18",
+      "classification": "auspicious_minor",
+      "score": 30,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Sunday — weekend surge; Heavy monsoon week — marginally dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Ashwini",
+        "masa": "Jyeshtha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-06-22",
+      "classification": "parva_snan_major",
+      "score": 33,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Major bathing day — estimated Lower crowd (Heavy monsoon week — marginally dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": -2,
+          "reason": "Heavy monsoon week — marginally dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Mrigashira",
+        "masa": "Jyeshtha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-07-02",
+      "classification": "auspicious_minor",
+      "score": 27,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Sunday — weekend surge; Peak monsoon week — slightly dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": 8,
+          "reason": "Sunday — weekend surge"
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Ekadashi",
+        "nakshatra": "Swati",
+        "masa": "Ashadha",
+        "weekday": "Ravivar"
+      }
+    },
+    {
+      "gregorian_date": "2028-07-06",
+      "classification": "parva_snan_major",
+      "score": 30,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Major bathing day — estimated Lower crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Shukla Purnima",
+        "nakshatra": "Mula",
+        "masa": "Ashadha",
+        "weekday": "Guruvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-07-17",
+      "classification": "auspicious_minor",
+      "score": 15,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Dashami",
+        "nakshatra": "Bharani",
+        "masa": "Ashadha",
+        "weekday": "Somvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-07-18",
+      "classification": "auspicious_minor",
+      "score": 15,
+      "band": {
+        "key": "lower",
+        "label_en": "Lower",
+        "label_hi": "कम",
+        "label_mr": "कमी"
+      },
+      "headline_reason": "Auspicious day — estimated Lower crowd (Peak monsoon week — slightly dampens turnout).",
+      "breakdown": [
+        {
+          "points": 20,
+          "reason": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Ekadashi",
+        "nakshatra": "Krittika",
+        "masa": "Ashadha",
+        "weekday": "Mangalvar"
+      }
+    },
+    {
+      "gregorian_date": "2028-07-22",
+      "classification": "parva_snan_major",
+      "score": 42,
+      "band": {
+        "key": "moderate",
+        "label_en": "Moderate",
+        "label_hi": "मध्यम",
+        "label_mr": "मध्यम"
+      },
+      "headline_reason": "Major bathing day — estimated Moderate crowd (Saturday — weekend surge; Peak monsoon week — slightly dampens turnout; Weekend day-trips feasible from Mumbai/Pune).",
+      "breakdown": [
+        {
+          "points": 35,
+          "reason": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+        },
+        {
+          "points": 8,
+          "reason": "Saturday — weekend surge"
+        },
+        {
+          "points": -5,
+          "reason": "Peak monsoon week — slightly dampens turnout"
+        },
+        {
+          "points": 4,
+          "reason": "Weekend day-trips feasible from Mumbai/Pune"
+        }
+      ],
+      "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+      "panchang": {
+        "tithi": "Krishna Amavasya",
+        "nakshatra": "Pushya",
+        "masa": "Ashadha",
+        "weekday": "Shanivar"
+      }
+    }
+  ]
+}

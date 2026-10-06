@@ -1,0 +1,15 @@
+{
+  "name": "kumbh-bot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simhastha Kumbh 2027 WhatsApp information bot. Zero runtime dependencies.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

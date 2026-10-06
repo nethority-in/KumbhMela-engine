@@ -1,0 +1,1754 @@
+{
+  "_generated_by": "engine/panchang_engine.py",
+  "_ayanamsa": "Lahiri",
+  "_masa_system": "Amanta",
+  "_day_rule": "tithi at local sunrise (Trimbakeshwar reference)",
+  "_note": "COMPUTED candidate auspicious days. Reconcile with official declaration in golden-source.json. Not for publication until confirmed.",
+  "coverage": {
+    "start": "2026-10-31",
+    "end": "2028-07-24"
+  },
+  "candidate_count": 102,
+  "candidates": [
+    {
+      "gregorian_date": "2026-11-05",
+      "weekday": "Guruvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Uttara Phalguni",
+      "masa": "Ashwina",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2026-11-09",
+      "weekday": "Somvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Swati",
+      "masa": "Ashwina",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": true,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)",
+        "Somvati Amavasya (Amavasya on Monday)"
+      ]
+    },
+    {
+      "gregorian_date": "2026-11-17",
+      "weekday": "Mangalvar",
+      "tithi_num": 8,
+      "tithi_name": "Ashtami",
+      "paksha": "Shukla",
+      "nakshatra": "Dhanishta",
+      "masa": "Kartika",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Vrishchika"
+      ]
+    },
+    {
+      "gregorian_date": "2026-11-24",
+      "weekday": "Mangalvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Krittika",
+      "masa": "Kartika",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2026-12-04",
+      "weekday": "Shukravar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Hasta",
+      "masa": "Kartika",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2026-12-08",
+      "weekday": "Mangalvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Anuradha",
+      "masa": "Kartika",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2026-12-17",
+      "weekday": "Guruvar",
+      "tithi_num": 8,
+      "tithi_name": "Ashtami",
+      "paksha": "Shukla",
+      "nakshatra": "Purva Bhadrapada",
+      "masa": "Margashirsha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Dhanu"
+      ]
+    },
+    {
+      "gregorian_date": "2026-12-20",
+      "weekday": "Ravivar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Ashwini",
+      "masa": "Margashirsha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-01-03",
+      "weekday": "Ravivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Vishakha",
+      "masa": "Margashirsha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-01-07",
+      "weekday": "Guruvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Purva Ashadha",
+      "masa": "Margashirsha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-01-15",
+      "weekday": "Shukravar",
+      "tithi_num": 7,
+      "tithi_name": "Saptami",
+      "paksha": "Shukla",
+      "nakshatra": "Revati",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Makara"
+      ]
+    },
+    {
+      "gregorian_date": "2027-01-19",
+      "weekday": "Mangalvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Rohini",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-01-22",
+      "weekday": "Shukravar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Punarvasu",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-02-02",
+      "weekday": "Mangalvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Jyeshtha",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-02-06",
+      "weekday": "Shanivar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Shravana",
+      "masa": "Pausha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-02-14",
+      "weekday": "Ravivar",
+      "tithi_num": 8,
+      "tithi_name": "Ashtami",
+      "paksha": "Shukla",
+      "nakshatra": "Krittika",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Kumbha"
+      ]
+    },
+    {
+      "gregorian_date": "2027-02-17",
+      "weekday": "Budhvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Ardra",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-03-03",
+      "weekday": "Budhvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Purva Ashadha",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-03-04",
+      "weekday": "Guruvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Uttara Ashadha",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-03-08",
+      "weekday": "Somvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Shatabhisha",
+      "masa": "Magha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": true,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)",
+        "Somvati Amavasya (Amavasya on Monday)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-03-16",
+      "weekday": "Mangalvar",
+      "tithi_num": 8,
+      "tithi_name": "Ashtami",
+      "paksha": "Shukla",
+      "nakshatra": "Mrigashira",
+      "masa": "Phalguna",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Meena"
+      ]
+    },
+    {
+      "gregorian_date": "2027-03-18",
+      "weekday": "Guruvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Pushya",
+      "masa": "Phalguna",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-03-22",
+      "weekday": "Somvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Uttara Phalguni",
+      "masa": "Phalguna",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-04-02",
+      "weekday": "Shukravar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Shravana",
+      "masa": "Phalguna",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-04-06",
+      "weekday": "Mangalvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Uttara Bhadrapada",
+      "masa": "Phalguna",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-04-15",
+      "weekday": "Guruvar",
+      "tithi_num": 9,
+      "tithi_name": "Navami",
+      "paksha": "Shukla",
+      "nakshatra": "Pushya",
+      "masa": "Chaitra",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Mesha"
+      ]
+    },
+    {
+      "gregorian_date": "2027-04-17",
+      "weekday": "Shanivar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Magha",
+      "masa": "Chaitra",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-04-20",
+      "weekday": "Mangalvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Chitra",
+      "masa": "Chaitra",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-05-02",
+      "weekday": "Ravivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Purva Bhadrapada",
+      "masa": "Chaitra",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-05-06",
+      "weekday": "Guruvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Bharani",
+      "masa": "Chaitra",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-05-16",
+      "weekday": "Ravivar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Uttara Phalguni",
+      "masa": "Vaishakha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Ekadashi",
+        "Sankranti / solar ingress into Vrishabha"
+      ]
+    },
+    {
+      "gregorian_date": "2027-05-20",
+      "weekday": "Guruvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Vishakha",
+      "masa": "Vaishakha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-06-01",
+      "weekday": "Mangalvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Revati",
+      "masa": "Vaishakha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-06-04",
+      "weekday": "Shukravar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Krittika",
+      "masa": "Vaishakha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-06-14",
+      "weekday": "Somvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Chitra",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-06-16",
+      "weekday": "Budhvar",
+      "tithi_num": 13,
+      "tithi_name": "Trayodashi",
+      "paksha": "Shukla",
+      "nakshatra": "Vishakha",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Mithuna"
+      ]
+    },
+    {
+      "gregorian_date": "2027-06-18",
+      "weekday": "Shukravar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Jyeshtha",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-06-19",
+      "weekday": "Shanivar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Mula",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-06-30",
+      "weekday": "Budhvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Bharani",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-07-04",
+      "weekday": "Ravivar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Ardra",
+      "masa": "Jyeshtha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-07-14",
+      "weekday": "Budhvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Anuradha",
+      "masa": "Ashadha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-07-17",
+      "weekday": "Shanivar",
+      "tithi_num": 14,
+      "tithi_name": "Chaturdashi",
+      "paksha": "Shukla",
+      "nakshatra": "Mula",
+      "masa": "Ashadha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Karka"
+      ]
+    },
+    {
+      "gregorian_date": "2027-07-18",
+      "weekday": "Ravivar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Purva Ashadha",
+      "masa": "Ashadha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-08-02",
+      "weekday": "Somvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Pushya",
+      "masa": "Ashadha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": true,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)",
+        "Somvati Amavasya (Amavasya on Monday)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-08-12",
+      "weekday": "Guruvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Jyeshtha",
+      "masa": "Shravana",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-08-17",
+      "weekday": "Mangalvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Dhanishta",
+      "masa": "Shravana",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-08-18",
+      "weekday": "Budhvar",
+      "tithi_num": 16,
+      "tithi_name": "Pratipada",
+      "paksha": "Krishna",
+      "nakshatra": "Shatabhisha",
+      "masa": "Shravana",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Simha"
+      ]
+    },
+    {
+      "gregorian_date": "2027-08-28",
+      "weekday": "Shanivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Ardra",
+      "masa": "Shravana",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-08-31",
+      "weekday": "Mangalvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Magha",
+      "masa": "Shravana",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-09-11",
+      "weekday": "Shanivar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Uttara Ashadha",
+      "masa": "Bhadrapada",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-09-15",
+      "weekday": "Budhvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Shatabhisha",
+      "masa": "Bhadrapada",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-09-18",
+      "weekday": "Shanivar",
+      "tithi_num": 17,
+      "tithi_name": "Dwitiya",
+      "paksha": "Krishna",
+      "nakshatra": "Revati",
+      "masa": "Bhadrapada",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Kanya"
+      ]
+    },
+    {
+      "gregorian_date": "2027-09-26",
+      "weekday": "Ravivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Pushya",
+      "masa": "Bhadrapada",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-09-30",
+      "weekday": "Guruvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Hasta",
+      "masa": "Bhadrapada",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-10-11",
+      "weekday": "Somvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Dhanishta",
+      "masa": "Ashwina",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-10-15",
+      "weekday": "Shukravar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Revati",
+      "masa": "Ashwina",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-10-18",
+      "weekday": "Somvar",
+      "tithi_num": 18,
+      "tithi_name": "Tritiya",
+      "paksha": "Krishna",
+      "nakshatra": "Krittika",
+      "masa": "Ashwina",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Tula"
+      ]
+    },
+    {
+      "gregorian_date": "2027-10-25",
+      "weekday": "Somvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Magha",
+      "masa": "Ashwina",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-10-29",
+      "weekday": "Shukravar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Chitra",
+      "masa": "Ashwina",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-11-10",
+      "weekday": "Budhvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Uttara Bhadrapada",
+      "masa": "Kartika",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-11-14",
+      "weekday": "Ravivar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Bharani",
+      "masa": "Kartika",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-11-17",
+      "weekday": "Budhvar",
+      "tithi_num": 19,
+      "tithi_name": "Chaturthi",
+      "paksha": "Krishna",
+      "nakshatra": "Ardra",
+      "masa": "Kartika",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Vrishchika"
+      ]
+    },
+    {
+      "gregorian_date": "2027-11-24",
+      "weekday": "Budhvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Hasta",
+      "masa": "Kartika",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-11-28",
+      "weekday": "Ravivar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Anuradha",
+      "masa": "Kartika",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-12-09",
+      "weekday": "Guruvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Revati",
+      "masa": "Margashirsha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-12-13",
+      "weekday": "Somvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Rohini",
+      "masa": "Margashirsha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2027-12-17",
+      "weekday": "Shukravar",
+      "tithi_num": 19,
+      "tithi_name": "Chaturthi",
+      "paksha": "Krishna",
+      "nakshatra": "Pushya",
+      "masa": "Margashirsha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Dhanu"
+      ]
+    },
+    {
+      "gregorian_date": "2027-12-23",
+      "weekday": "Guruvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Swati",
+      "masa": "Margashirsha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2027-12-27",
+      "weekday": "Somvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Mula",
+      "masa": "Margashirsha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": true,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)",
+        "Somvati Amavasya (Amavasya on Monday)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-01-08",
+      "weekday": "Shanivar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Krittika",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-01-12",
+      "weekday": "Budhvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Punarvasu",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-01-15",
+      "weekday": "Shanivar",
+      "tithi_num": 19,
+      "tithi_name": "Chaturthi",
+      "paksha": "Krishna",
+      "nakshatra": "Magha",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Makara"
+      ]
+    },
+    {
+      "gregorian_date": "2028-01-22",
+      "weekday": "Shanivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Anuradha",
+      "masa": "Pausha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-01-26",
+      "weekday": "Budhvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Uttara Ashadha",
+      "masa": "Pausha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-02-07",
+      "weekday": "Somvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Mrigashira",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-02-10",
+      "weekday": "Guruvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Ashlesha",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-02-14",
+      "weekday": "Somvar",
+      "tithi_num": 20,
+      "tithi_name": "Panchami",
+      "paksha": "Krishna",
+      "nakshatra": "Hasta",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Kumbha"
+      ]
+    },
+    {
+      "gregorian_date": "2028-02-20",
+      "weekday": "Ravivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Mula",
+      "masa": "Magha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-02-25",
+      "weekday": "Shukravar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Shatabhisha",
+      "masa": "Magha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-03-07",
+      "weekday": "Mangalvar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Punarvasu",
+      "masa": "Phalguna",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-03-15",
+      "weekday": "Budhvar",
+      "tithi_num": 20,
+      "tithi_name": "Panchami",
+      "paksha": "Krishna",
+      "nakshatra": "Vishakha",
+      "masa": "Phalguna",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Meena"
+      ]
+    },
+    {
+      "gregorian_date": "2028-03-21",
+      "weekday": "Mangalvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Shravana",
+      "masa": "Phalguna",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-03-26",
+      "weekday": "Ravivar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Uttara Bhadrapada",
+      "masa": "Phalguna",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-04-09",
+      "weekday": "Ravivar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Hasta",
+      "masa": "Chaitra",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-04-14",
+      "weekday": "Shukravar",
+      "tithi_num": 20,
+      "tithi_name": "Panchami",
+      "paksha": "Krishna",
+      "nakshatra": "Jyeshtha",
+      "masa": "Chaitra",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Mesha"
+      ]
+    },
+    {
+      "gregorian_date": "2028-04-20",
+      "weekday": "Guruvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Shatabhisha",
+      "masa": "Chaitra",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-04-24",
+      "weekday": "Somvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Ashwini",
+      "masa": "Chaitra",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": true,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)",
+        "Somvati Amavasya (Amavasya on Monday)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-05-05",
+      "weekday": "Shukravar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Uttara Phalguni",
+      "masa": "Vaishakha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-05-08",
+      "weekday": "Somvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Swati",
+      "masa": "Vaishakha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-05-15",
+      "weekday": "Somvar",
+      "tithi_num": 22,
+      "tithi_name": "Saptami",
+      "paksha": "Krishna",
+      "nakshatra": "Shravana",
+      "masa": "Vaishakha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Vrishabha"
+      ]
+    },
+    {
+      "gregorian_date": "2028-05-20",
+      "weekday": "Shanivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Uttara Bhadrapada",
+      "masa": "Vaishakha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-05-24",
+      "weekday": "Budhvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Krittika",
+      "masa": "Vaishakha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-06-03",
+      "weekday": "Shanivar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Chitra",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-06-07",
+      "weekday": "Budhvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Jyeshtha",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-06-15",
+      "weekday": "Guruvar",
+      "tithi_num": 23,
+      "tithi_name": "Ashtami",
+      "paksha": "Krishna",
+      "nakshatra": "Purva Bhadrapada",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Mithuna"
+      ]
+    },
+    {
+      "gregorian_date": "2028-06-18",
+      "weekday": "Ravivar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Ashwini",
+      "masa": "Jyeshtha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-06-22",
+      "weekday": "Guruvar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Mrigashira",
+      "masa": "Jyeshtha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-07-02",
+      "weekday": "Ravivar",
+      "tithi_num": 11,
+      "tithi_name": "Ekadashi",
+      "paksha": "Shukla",
+      "nakshatra": "Swati",
+      "masa": "Ashadha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-07-06",
+      "weekday": "Guruvar",
+      "tithi_num": 15,
+      "tithi_name": "Purnima",
+      "paksha": "Shukla",
+      "nakshatra": "Mula",
+      "masa": "Ashadha",
+      "is_amavasya": false,
+      "is_purnima": true,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Purnima (full moon)"
+      ]
+    },
+    {
+      "gregorian_date": "2028-07-17",
+      "weekday": "Somvar",
+      "tithi_num": 25,
+      "tithi_name": "Dashami",
+      "paksha": "Krishna",
+      "nakshatra": "Bharani",
+      "masa": "Ashadha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": true,
+      "auspicious_flags": [
+        "Sankranti / solar ingress into Karka"
+      ]
+    },
+    {
+      "gregorian_date": "2028-07-18",
+      "weekday": "Mangalvar",
+      "tithi_num": 26,
+      "tithi_name": "Ekadashi",
+      "paksha": "Krishna",
+      "nakshatra": "Krittika",
+      "masa": "Ashadha",
+      "is_amavasya": false,
+      "is_purnima": false,
+      "is_ekadashi": true,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Ekadashi"
+      ]
+    },
+    {
+      "gregorian_date": "2028-07-22",
+      "weekday": "Shanivar",
+      "tithi_num": 30,
+      "tithi_name": "Amavasya",
+      "paksha": "Krishna",
+      "nakshatra": "Pushya",
+      "masa": "Ashadha",
+      "is_amavasya": true,
+      "is_purnima": false,
+      "is_ekadashi": false,
+      "is_somvati_amavasya": false,
+      "is_sankranti": false,
+      "auspicious_flags": [
+        "Amavasya (new moon)"
+      ]
+    }
+  ]
+}
