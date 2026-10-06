@@ -24,8 +24,7 @@ const T = {
       "Try: which days are auspicious, or which day is quieter.",
     thanks: "You are welcome. Travel gently.",
     estimateWord: "Estimated",
-    tail:
-      "These are estimates, not official announcements. Confirm dates and arrangements with the mela authorities, and always follow police and administration instruction on the day.",
+    tail: "These are estimates, not official announcements. Confirm dates and arrangements with the mela authorities, and always follow police and administration instruction on the day.",
     quietHeadline: "Quieter auspicious days",
     quietIntro:
       "These days are far less crowded than the three royal baths. The water is the same water.",
@@ -35,13 +34,14 @@ const T = {
     royalIntro:
       "These are the busiest days of the season. They carry the akhara processions. If you want the procession, these are the days. If you want quiet, ask for quieter days.",
     crowdHeadline: "How we estimate crowds",
-    crowdBands: "Very High, High, Moderate, Lower. The band comes from published rules, not from measured attendance.",
-    crowdPeak: "Only three days score High in the whole season. The other ninety-nine are quieter.",
+    crowdBands:
+      "Very High, High, Moderate, Lower. The band comes from published rules, not from measured attendance.",
+    crowdPeak:
+      "Only three days score High in the whole season. The other ninety-nine are quieter.",
     watersHeadline: "Two waters, one river",
-    watersRam:
-      "Ramkund, Nashik — on the Godavari, in the city at Panchavati.",
+    watersRam: "Ramkund, Nashik - on the Godavari, in the city at Panchavati.",
     watersKush:
-      "Kushavarta Kund, Trimbakeshwar — the source of the Godavari, about thirty kilometres west, beside a Jyotirlinga.",
+      "Kushavarta Kund, Trimbakeshwar - the source of the Godavari, about thirty kilometres west, beside a Jyotirlinga.",
     watersNote:
       "Which order bathes where is traditionally recorded one way, but accounts differ and arrangements can change from one mela to the next. Treat it as background and confirm the current plan with local authorities before you travel.",
     helplineHeadline: "Emergency",
@@ -56,7 +56,8 @@ const T = {
       "Travel information is published on our website, which carries the current details for Nashik and Trimbakeshwar.",
     reachNoGuess:
       "I do not keep travel routes in my data, so I will not guess at timings or distances. Please read the guide there before you set out.",
-    noData: "The calendar data is not available right now. Please try again shortly.",
+    noData:
+      "The calendar data is not available right now. Please try again shortly.",
   },
 
   hi: {
@@ -74,22 +75,23 @@ const T = {
       "पूछिए: कौन से दिन शुभ हैं, या कौन सा दिन शांत है।",
     thanks: "स्वागत है। यात्रा कोमल हो।",
     estimateWord: "अनुमानित",
-    tail:
-      "ये अनुमान हैं, आधिकारिक घोषणा नहीं। तारीख और व्यवस्था मेला अधिकारियों से पुष्ट करें, और उस दिन पुलिस तथा प्रशासन के निर्देश का पालन करें।",
+    tail: "ये अनुमान हैं, आधिकारिक घोषणा नहीं। तारीख और व्यवस्था मेला अधिकारियों से पुष्ट करें, और उस दिन पुलिस तथा प्रशासन के निर्देश का पालन करें।",
     quietHeadline: "कम भीड़ वाले शुभ दिन",
-    quietIntro:
-      "ये दिन तीन राजा स्नान से कहीं ज्यादा शांत हैं। जल वही है।",
+    quietIntro: "ये दिन तीन राजा स्नान से कहीं ज्यादा शांत हैं। जल वही है।",
     allDaysIntro:
       "इंजन द्वारा गणना किए गए सभी शुभ दिन, अनुमानित भीड़ पट्टी के साथ।",
     royalHeadline: "तीन राजा स्नान",
     royalIntro:
       "ये सीज़न के सबसे व्यस्त दिन हैं। यहीं अखारा की शाही यात्रा होती है। यात्रा चाहिए तो ये दिन, शांति चाहिए तो शांत दिन पूछिए।",
     crowdHeadline: "भीड़ का अनुमान कैसे लगाते हैं",
-    crowdBands: "बहुत अधिक, अधिक, मध्यम, कम। यह पट्टी प्रकाशित नियमों से आती है, मापे गई भीड़ से नहीं।",
-    crowdPeak: "पूरे सीज़न में सिर्फ तीन दिन 'अधिक' हैं। बाकी निन्यानबे शांत हैं।",
+    crowdBands:
+      "बहुत अधिक, अधिक, मध्यम, कम। यह पट्टी प्रकाशित नियमों से आती है, मापे गई भीड़ से नहीं।",
+    crowdPeak:
+      "पूरे सीज़न में सिर्फ तीन दिन 'अधिक' हैं। बाकी निन्यानबे शांत हैं।",
     watersHeadline: "दो जल, एक नदी",
-    watersRam: "रामकुंड, नाशिक — गोदावरी पर, पंचवटी में।",
-    watersKush: "कुषावर्त कुंड, त्रिम्बकेश्वर — गोदावरी का उद्गम, लगभग तीस किलोमीटर पश्चिम, एक ज्योतिर्लिंग के पास।",
+    watersRam: "रामकुंड, नाशिक - गोदावरी पर, पंचवटी में।",
+    watersKush:
+      "कुषावर्त कुंड, त्रिम्बकेश्वर - गोदावरी का उद्गम, लगभग तीस किलोमीटर पश्चिम, एक ज्योतिर्लिंग के पास।",
     watersNote:
       "कौन सा अखारा किस कुंड पर स्नान करता है, यह परंपरागत रूप से एक तरह से दर्ज है, पर स्रोत भिन्न हैं और व्यवस्था हर मेले में बदल सकती है। यह पृष्ठभूमि मानें और यात्रा से पहले स्थानीय अधिकारियों से पुष्टि करें।",
     helplineHeadline: "आपातकाल",
@@ -104,7 +106,8 @@ const T = {
       "यात्रा की जानकारी हमारी वेबसाइट पर प्रकाशित है, जहां नाशिक और त्रिम्बकेश्वर का मौजूदा विवरण दिया गया है।",
     reachNoGuess:
       "मेरे पास यात्रा मार्ग मेरे आंकड़ों में नहीं हैं, इसलिए मैं समय या दूरी का अंदाज़ा नहीं लगाऊँगा। कृपया निकलने से पहले वहाँ की मार्गदर्शिका पढ़ें।",
-    noData: "अभी पंचांग आंकड़े उपलब्ध नहीं हैं। कृपया थोड़ी देर बाद प्रयास करें।",
+    noData:
+      "अभी पंचांग आंकड़े उपलब्ध नहीं हैं। कृपया थोड़ी देर बाद प्रयास करें।",
   },
 
   mr: {
@@ -122,22 +125,23 @@ const T = {
       "विचारा: कोणते दिवस शुभ आहेत, किंवा कोणता दिवस शांत आहे.",
     thanks: "स्वागत आहे. प्रवास सौम्य असावा.",
     estimateWord: "अंदाजे",
-    tail:
-      "हे अंदाजे आहेत, अधिकृत घोषणा नाहीत. तारीख व व्यवस्था मेळा अधिकाऱ्यांकडून खात्री करा, आणि त्या दिवशी पोलीस व प्रशासनाच्या सूचनांचे पालन करा.",
+    tail: "हे अंदाजे आहेत, अधिकृत घोषणा नाहीत. तारीख व व्यवस्था मेळा अधिकाऱ्यांकडून खात्री करा, आणि त्या दिवशी पोलीस व प्रशासनाच्या सूचनांचे पालन करा.",
     quietHeadline: "कमी भीड असलेले शुभ दिवस",
     quietIntro:
       "हे दिवस तीन राजा स्नानापेक्षा कितीतरी शांत आहेत. वाहिण तीच आहे.",
-    allDaysIntro:
-      "इंजिनाने गणित केलेले सर्व शुभ दिवस, अंदाजे भीड पट्टीसह.",
+    allDaysIntro: "इंजिनाने गणित केलेले सर्व शुभ दिवस, अंदाजे भीड पट्टीसह.",
     royalHeadline: "तीन राजा स्नान",
     royalIntro:
       "हे हंगामीच्या सर्वात व्यस्त दिवस आहेत. इथे अखार्यांची शाही यात्रा होते. यात्रा हवी असेल तर हे दिवस, शांतता हवी असेल तर शांत दिवस विचारा.",
     crowdHeadline: "भीडचा अंदाज कसा काढतो",
-    crowdBands: "खूप जास्त, जास्त, मध्यम, कमी. ही पट्टी प्रसिद्ध नियमांवरून येते, मोजलेल्या भीडवरून नाही.",
-    crowdPeak: "संपूर्ण हंगामात फक्त तीन दिवस 'जास्त' आहेत. उर्वीत नव्याण्ये शांत आहेत.",
+    crowdBands:
+      "खूप जास्त, जास्त, मध्यम, कमी. ही पट्टी प्रसिद्ध नियमांवरून येते, मोजलेल्या भीडवरून नाही.",
+    crowdPeak:
+      "संपूर्ण हंगामात फक्त तीन दिवस 'जास्त' आहेत. उर्वीत नव्याण्ये शांत आहेत.",
     watersHeadline: "दोन वाहिणा, एक नदी",
-    watersRam: "रामकुंड, नाशिक — गोदावरीवर, पंचवटीत.",
-    watersKush: "कुषावर्त कुंड, त्रिम्बकेश्वर — गोदावरीचा उगम, सुमारे तीस किलोमीटर पश्चिम, एका ज्योतिर्लिंगाजवळ.",
+    watersRam: "रामकुंड, नाशिक - गोदावरीवर, पंचवटीत.",
+    watersKush:
+      "कुषावर्त कुंड, त्रिम्बकेश्वर - गोदावरीचा उगम, सुमारे तीस किलोमीटर पश्चिम, एका ज्योतिर्लिंगाजवळ.",
     watersNote:
       "कोणता अखारा कुठल्या कुंडावर स्नान करतो, हे परंपरेने एकप्रकारे नोंदवलेले आहे, परंतु स्रोत वेगवेगळे आहेत आणि व्यवस्था प्रत्येक मेळ्यात बदलू शकते. हे पार्श्वभूमी मानून प्रवासापूर्वी स्थानिक अधिकाऱ्यांकडून खात्री करा.",
     helplineHeadline: "आणीबाणी",
@@ -152,7 +156,8 @@ const T = {
       "प्रवासाची माहिती आमच्या संकेतस्थळावर प्रकाशित आहे, जिथे नाशिक आणि त्रिम्बकेश्वरचा सध्याचा तपशील दिला आहे.",
     reachNoGuess:
       "प्रवासाचे मार्ग माझ्या आकड्यांमध्ये नाहीत, म्हणून मी वेळ किंवा अंतराचा अंदाज लावणार नाही. कृपया निघण्यापूर्वी तिथीली मार्गदर्शिका वाचा.",
-    noData: "सध्या पंचांग माहिती उपलब्ध नाही. कृपया थोड्या वेळाने पुन्हा प्रयत्न करा.",
+    noData:
+      "सध्या पंचांग माहिती उपलब्ध नाही. कृपया थोड्या वेळाने पुन्हा प्रयत्न करा.",
   },
 };
 
@@ -161,7 +166,8 @@ const DATES = {
     label: (s) => s,
     quietNote: "Why quieter:",
     bandLine: (band) => `${band.label_en} crowd`,
-    panchang: (p) => `Panchang — ${[p.tithi, p.nakshatra, p.masa, p.weekday].filter(Boolean).join(", ")}`,
+    panchang: (p) =>
+      `Panchang - ${[p.tithi, p.nakshatra, p.masa, p.weekday].filter(Boolean).join(", ")}`,
     royalTag: "Royal bath (Amrit Snan)",
     majorTag: "Major bathing day",
     minorTag: "Auspicious day",
@@ -171,7 +177,8 @@ const DATES = {
     label: (s) => s,
     quietNote: "कम भीड़ का कारण:",
     bandLine: (band) => `${band.label_hi} भीड़`,
-    panchang: (p) => `पंचांग — ${[p.tithi, p.nakshatra, p.masa, p.weekday].filter(Boolean).join(", ")}`,
+    panchang: (p) =>
+      `पंचांग - ${[p.tithi, p.nakshatra, p.masa, p.weekday].filter(Boolean).join(", ")}`,
     royalTag: "राजा स्नान (अमृत स्नान)",
     majorTag: "प्रमुख स्नान दिवस",
     minorTag: "शुभ दिवस",
@@ -181,7 +188,8 @@ const DATES = {
     label: (s) => s,
     quietNote: "कमी भीडीचे कारण:",
     bandLine: (band) => `${band.label_mr} भीड`,
-    panchang: (p) => `पंचांग — ${[p.tithi, p.nakshatra, p.masa, p.weekday].filter(Boolean).join(", ")}`,
+    panchang: (p) =>
+      `पंचांग - ${[p.tithi, p.nakshatra, p.masa, p.weekday].filter(Boolean).join(", ")}`,
     royalTag: "राजा स्नान (अमृत स्नान)",
     majorTag: "प्रमुख स्नान दिवस",
     minorTag: "शुभ दिवस",

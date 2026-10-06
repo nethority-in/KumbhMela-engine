@@ -7,57 +7,128 @@
 
   "bands": {
     "_note": "Final 0-100 score maps to exactly four bands. Never 'safe/unsafe'.",
-    "very_high": {"min": 75, "label_en": "Very High", "label_hi": "बहुत अधिक", "label_mr": "खूप जास्त"},
-    "high":      {"min": 55, "label_en": "High",      "label_hi": "अधिक",     "label_mr": "जास्त"},
-    "moderate":  {"min": 35, "label_en": "Moderate",  "label_hi": "मध्यम",    "label_mr": "मध्यम"},
-    "lower":     {"min": 0,  "label_en": "Lower",      "label_hi": "कम",       "label_mr": "कमी"}
+    "very_high": {
+      "min": 75,
+      "label_en": "Very High",
+      "label_hi": "बहुत अधिक",
+      "label_mr": "खूप जास्त"
+    },
+    "high": {
+      "min": 55,
+      "label_en": "High",
+      "label_hi": "अधिक",
+      "label_mr": "जास्त"
+    },
+    "moderate": {
+      "min": 35,
+      "label_en": "Moderate",
+      "label_hi": "मध्यम",
+      "label_mr": "मध्यम"
+    },
+    "lower": {
+      "min": 0,
+      "label_en": "Lower",
+      "label_hi": "कम",
+      "label_mr": "कमी"
+    }
   },
 
   "baseline_by_classification": {
     "_why": "The single largest driver of crowd is the religious rank of the day. Amrit Snan draws akhara processions and the widest public; parva days draw devout crowds; ordinary mela days are far lighter.",
-    "amrit_snan":        {"value": 60, "why": "Royal-bath days concentrate the entire mela's attention and akhara processions onto one date."},
-    "parva_snan_major":  {"value": 35, "why": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."},
-    "auspicious_minor":  {"value": 20, "why": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."},
-    "ordinary_mela_day": {"value": 8,  "why": "Any day in the mela window still sees baseline pilgrim flow."}
+    "amrit_snan": {
+      "value": 60,
+      "why": "Royal-bath days concentrate the entire mela's attention and akhara processions onto one date."
+    },
+    "parva_snan_major": {
+      "value": 35,
+      "why": "Amavasya / Purnima / major-festival bathing days draw large devout crowds, well below a royal bath."
+    },
+    "auspicious_minor": {
+      "value": 20,
+      "why": "Ekadashi and lesser auspicious days draw committed pilgrims but not the general public."
+    },
+    "ordinary_mela_day": {
+      "value": 8,
+      "why": "Any day in the mela window still sees baseline pilgrim flow."
+    }
   },
 
   "day_of_week": {
     "_why": "Weekends let working families and day-trippers from Mumbai/Pune attend, adding a predictable surge on top of the religious baseline.",
-    "saturday": {"value": 8, "why": "Full weekend day; strong day-trip and family turnout."},
-    "sunday":   {"value": 8, "why": "Full weekend day; strong day-trip and family turnout."},
-    "friday":   {"value": 4, "why": "Leading edge of the weekend; early arrivals."},
-    "weekday":  {"value": 0, "why": "No weekend surge."}
+    "saturday": {
+      "value": 8,
+      "why": "Full weekend day; strong day-trip and family turnout."
+    },
+    "sunday": {
+      "value": 8,
+      "why": "Full weekend day; strong day-trip and family turnout."
+    },
+    "friday": {
+      "value": 4,
+      "why": "Leading edge of the weekend; early arrivals."
+    },
+    "weekday": { "value": 0, "why": "No weekend surge." }
   },
 
   "holiday_coincidence": {
     "_why": "A public holiday on or beside an auspicious day multiplies attendance by freeing working pilgrims.",
-    "on_national_or_state_holiday": {"value": 12, "why": "A gazetted holiday coinciding with a bathing day sharply raises turnout."},
-    "adjacent_long_weekend":        {"value": 6,  "why": "A holiday creating a 3-day weekend around the date raises travel-in."}
+    "on_national_or_state_holiday": {
+      "value": 12,
+      "why": "A gazetted holiday coinciding with a bathing day sharply raises turnout."
+    },
+    "adjacent_long_weekend": {
+      "value": 6,
+      "why": "A holiday creating a 3-day weekend around the date raises travel-in."
+    }
   },
 
   "major_festival_coincidence": {
     "_why": "A major Hindu festival (computed from panchang, e.g. Ganesh Chaturthi in Maharashtra) landing on/near a bathing day compounds crowds, especially locally.",
-    "on_major_festival":   {"value": 10, "why": "Festival + bathing day is a double draw; Ganesh Chaturthi is especially large in Maharashtra."},
-    "within_2_days":       {"value": 5,  "why": "Festival spillover crowd in the days around it."}
+    "on_major_festival": {
+      "value": 10,
+      "why": "Festival + bathing day is a double draw; Ganesh Chaturthi is especially large in Maharashtra."
+    },
+    "within_2_days": {
+      "value": 5,
+      "why": "Festival spillover crowd in the days around it."
+    }
   },
 
   "amrit_snan_clustering": {
     "_why": "Days near a royal bath inherit spillover: pilgrims arrive early or stay on, and infrastructure is already saturated.",
-    "within_3_days_of_amrit_snan": {"value": 8, "why": "Direct spillover shoulder of a royal bath."},
-    "within_4_to_7_days":          {"value": 4, "why": "Outer shoulder; elevated but easing."}
+    "within_3_days_of_amrit_snan": {
+      "value": 8,
+      "why": "Direct spillover shoulder of a royal bath."
+    },
+    "within_4_to_7_days": {
+      "value": 4,
+      "why": "Outer shoulder; elevated but easing."
+    }
   },
 
   "monsoon_intensity": {
-    "_why": "Heavy monsoon weeks modestly DAMPEN discretionary turnout (travel disruption, flooding risk) even as they raise on-ground danger. This is a small, uncertain second-order effect on crowd SIZE. Data-source: data/imd-rainfall-nashik.json (currently a PLACEHOLDER — replace with sourced IMD Nashik weekly normals and re-derive peak weeks from the data, do not assume).",
-    "peak_week":    {"value": -5, "why": "Peak-rain weeks slightly reduce discretionary/day-trip crowd."},
-    "high_week":    {"value": -2, "why": "Heavy-rain weeks marginally reduce discretionary crowd."},
-    "low_week":     {"value": 3,  "why": "Drier weeks see slightly higher discretionary turnout."},
+    "_why": "Heavy monsoon weeks modestly DAMPEN discretionary turnout (travel disruption, flooding risk) even as they raise on-ground danger. This is a small, uncertain second-order effect on crowd SIZE. Data-source: data/imd-rainfall-nashik.json (currently a PLACEHOLDER - replace with sourced IMD Nashik weekly normals and re-derive peak weeks from the data, do not assume).",
+    "peak_week": {
+      "value": -5,
+      "why": "Peak-rain weeks slightly reduce discretionary/day-trip crowd."
+    },
+    "high_week": {
+      "value": -2,
+      "why": "Heavy-rain weeks marginally reduce discretionary crowd."
+    },
+    "low_week": {
+      "value": 3,
+      "why": "Drier weeks see slightly higher discretionary turnout."
+    },
     "_uncertainty": "Sign and size are uncertain. If IMD data or 2015/2025 attendance contradicts this, reduce to 0 or flip. Documented on Methodology page."
   },
 
   "travel_accessibility": {
     "_why": "Nashik sits within a day's road trip of two mega-cities (Mumbai ~165 km, Pune ~210 km). This inflates the WEEKEND surge specifically, because day-trips become feasible. Baseline regional pull is already inside the classification baselines. Source: data/source-cities.json.",
-    "weekend_daytrip_amplifier": {"value": 4, "why": "On weekends, feasible day-trips from Mumbai/Pune add to the weekend surge."}
+    "weekend_daytrip_amplifier": {
+      "value": 4,
+      "why": "On weekends, feasible day-trips from Mumbai/Pune add to the weekend surge."
+    }
   },
 
   "historical_attendance_note": {
@@ -65,5 +136,5 @@
     "value": 0
   },
 
-  "clamp": {"min": 0, "max": 100}
+  "clamp": { "min": 0, "max": 100 }
 }

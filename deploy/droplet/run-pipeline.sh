@@ -42,7 +42,7 @@ if grep -q 'declared:' /tmp/engine.out; then
   # (Shravan / Shravana) and a source may omit the paksha where the engine
   # always writes it (Shravan Amavasya vs Shravana Krishna Amavasya). Those are
   # naming conventions, not disagreements. The tithi itself is always the final
-  # word — Amavasya, Purnima, Ekadashi, Pratipada and so on — so compare that.
+  # word - Amavasya, Purnima, Ekadashi, Pratipada and so on - so compare that.
   # A different final word means a genuinely different tithi, which is the
   # 2027-08-02 case: "Shukla" (declined) against "Amavasya" (computed).
   MISMATCH=$(awk '

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-panchang_engine.py — Deliverable 1, the date engine.
+panchang_engine.py - Deliverable 1, the date engine.
 
 WHAT THIS DOES
 --------------
@@ -15,7 +15,7 @@ WHY THIS LIBRARY
 ----------------
 Swiss Ephemeris (via `pyswisseph`) is the reference implementation Indian
 professional panchang-makers rely on. We use its built-in Moshier analytic
-ephemeris (`FLG_MOSEPH`) so NO external ephemeris data files are required —
+ephemeris (`FLG_MOSEPH`) so NO external ephemeris data files are required -
 Moshier gives arc-second-level accuracy, far more than tithi boundaries need.
 Ayanamsa is Lahiri (Chitrapaksha), the Government of India Rashtriya Panchang
 standard.
@@ -27,7 +27,7 @@ INTEGRITY RULES (see project README)
 - The engine's output is a CANDIDATE list. It does not override official
   declaration; it is reconciled against data/golden-source.json downstream.
 
-CONVENTIONS (flagged for a panchang authority to confirm — see UNVERIFIED.md)
+CONVENTIONS (flagged for a panchang authority to confirm - see UNVERIFIED.md)
 -----------------------------------------------------------------------------
 - Day rule: tithi prevailing at local sunrise names the day. Some festivals use
   other moments (moonrise/midday/ritual instant); those are NOT special-cased
@@ -57,7 +57,7 @@ try:
 except ImportError as exc:  # pragma: no cover - environment guard
     raise SystemExit(
         "pyswisseph is not installed. Run: pip install -r engine/requirements.txt\n"
-        "(This machine currently has no Python/pip — see project README prerequisites.)"
+        "(This machine currently has no Python/pip - see project README prerequisites.)"
     ) from exc
 
 # --------------------------------------------------------------------------- #
@@ -351,7 +351,7 @@ def main() -> None:
     for iso, label in DECLARED_AMRIT_SNAN.items():
         rec = by_date.get(iso)
         if rec is None:
-            print(f"  {iso}  OUTSIDE COVERAGE — cannot check")
+            print(f"  {iso}  OUTSIDE COVERAGE - cannot check")
             continue
         computed = f"{rec.masa} {rec.paksha} {rec.tithi_name} ({rec.weekday})"
         print(f"  {iso}  declared: {label}")
@@ -359,7 +359,7 @@ def main() -> None:
         print(f"             flags: {', '.join(rec.auspicious_flags) or '(none)'}\n")
     print("Review any line where 'computed' does not match 'declared'. A mismatch "
           "means either a source error, a festival-specific tithi rule, or an "
-          "ayanamsa/convention difference — resolve with a panchang authority "
+          "ayanamsa/convention difference - resolve with a panchang authority "
           "before publishing. See UNVERIFIED.md.")
 
 

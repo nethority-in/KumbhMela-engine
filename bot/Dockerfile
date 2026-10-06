@@ -2,7 +2,7 @@ FROM node:22-slim
 
 WORKDIR /app
 
-# Zero runtime dependencies — nothing to install.
+# Zero runtime dependencies - nothing to install.
 COPY bot ./bot
 COPY data ./data
 

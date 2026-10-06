@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-score.py — Deliverable 2, the crowd estimation model.
+score.py - Deliverable 2, the crowd estimation model.
 
 Transparent, rule-based, no ML, no black box. Reads the engine's computed
 candidate days + the verified anchors, applies crowd-model/weights.config.json,
-and writes data/dist/calendar.json — the final static artifact the website (D3)
+and writes data/dist/calendar.json - the final static artifact the website (D3)
 and bot (D4) consume.
 
 Every day gets: a 0-100 score, one of four bands (Very High / High / Moderate /
@@ -70,11 +70,11 @@ def score_day(day: dict, ctx: dict) -> dict:
     wd = d.weekday()  # Mon=0
     dow = w["day_of_week"]
     if wd == 5:
-        add(dow["saturday"]["value"], "Saturday — weekend surge")
+        add(dow["saturday"]["value"], "Saturday - weekend surge")
     elif wd == 6:
-        add(dow["sunday"]["value"], "Sunday — weekend surge")
+        add(dow["sunday"]["value"], "Sunday - weekend surge")
     elif wd == 4:
-        add(dow["friday"]["value"], "Friday — leading edge of the weekend")
+        add(dow["friday"]["value"], "Friday - leading edge of the weekend")
 
     # 3) fixed-date holiday coincidence
     iso = day["gregorian_date"]
@@ -92,19 +92,19 @@ def score_day(day: dict, ctx: dict) -> dict:
         gap = nearest_amrit_gap(d, ctx["amrit_dates"])
         cl = w["amrit_snan_clustering"]
         if gap <= 3:
-            add(cl["within_3_days_of_amrit_snan"]["value"], "Within 3 days of a royal bath — spillover")
+            add(cl["within_3_days_of_amrit_snan"]["value"], "Within 3 days of a royal bath - spillover")
         elif gap <= 7:
-            add(cl["within_4_to_7_days"]["value"], "Within a week of a royal bath — outer spillover")
+            add(cl["within_4_to_7_days"]["value"], "Within a week of a royal bath - outer spillover")
 
     # 6) monsoon intensity
     intensity = ctx["monsoon_by_month"].get(f"{d.month:02d}", "moderate")
     mon = w["monsoon_intensity"]
     if intensity == "peak":
-        add(mon["peak_week"]["value"], "Peak monsoon week — slightly dampens turnout")
+        add(mon["peak_week"]["value"], "Peak monsoon week - slightly dampens turnout")
     elif intensity == "high":
-        add(mon["high_week"]["value"], "Heavy monsoon week — marginally dampens turnout")
+        add(mon["high_week"]["value"], "Heavy monsoon week - marginally dampens turnout")
     elif intensity in ("low", "dry"):
-        add(mon["low_week"]["value"], "Drier week — slightly higher turnout")
+        add(mon["low_week"]["value"], "Drier week - slightly higher turnout")
 
     # 7) weekend day-trip amplifier (travel accessibility)
     if wd in (5, 6):
@@ -124,7 +124,7 @@ def score_day(day: dict, ctx: dict) -> dict:
         "band": band,
         "headline_reason": headline,
         "breakdown": contributions,
-        "estimate_disclaimer": "Crowd estimate only — informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
+        "estimate_disclaimer": "Crowd estimate only - informed by rules, not a validated prediction. Always follow police and administration instruction on the day.",
         "panchang": {
             "tithi": f"{day.get('paksha','')} {day.get('tithi_name','')}".strip(),
             "nakshatra": day.get("nakshatra"),
@@ -145,7 +145,7 @@ def _headline(cls: str, band: dict, contributions: list, day: dict) -> str:
         "auspicious_minor": "Auspicious day",
         "ordinary_mela_day": "Regular mela day",
     }
-    return f"{names[cls]} — estimated {label} crowd ({tail})."
+    return f"{names[cls]} - estimated {label} crowd ({tail})."
 
 
 def main() -> None:
@@ -179,12 +179,12 @@ def main() -> None:
     }
 
     # Union of engine candidates + the verified anchors (anchors may not be flagged
-    # by the engine if a festival-specific rule applies — never drop a declared bath).
+    # by the engine if a festival-specific rule applies - never drop a declared bath).
     by_date = {c["gregorian_date"]: c for c in computed["candidates"]}
     for b in golden["bathing_days"]:
         by_date.setdefault(b["gregorian_date"], {
             "gregorian_date": b["gregorian_date"],
-            "auspicious_flags": ["declared Amrit Snan (not flagged by engine — verify)"],
+            "auspicious_flags": ["declared Amrit Snan (not flagged by engine - verify)"],
         })
 
     scored = [score_day(day, ctx) for _, day in sorted(by_date.items())]

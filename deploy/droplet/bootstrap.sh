@@ -72,7 +72,7 @@ if [ -f /root/.ssh/id_ed25519.pub ]; then
   install -m 644 -o "$APP_USER" -g "$APP_USER" /root/.ssh/id_ed25519.pub \
     "/home/$APP_USER/.ssh/id_ed25519.pub"
 else
-  warn "no /root/.ssh/id_ed25519.pub — cloning as $APP_USER may fail."
+  warn "no /root/.ssh/id_ed25519.pub - cloning as $APP_USER may fail."
   warn "run: ssh-keygen -t ed25519 -N '' (accept the default path), then add the pubkey to GitHub."
 fi
 
@@ -102,7 +102,7 @@ su - "$APP_USER" -c "test -d $APP_HOME/pipeline/.git" || \
 log "Publishing the guide into $SITE_ROOT"
 rsync -a --delete --exclude '.git' "$APP_HOME/site/" "$SITE_ROOT/"
 # rsync carries the source umask across, which leaves directories without the
-# execute bit that nginx needs to descend into them — the symptom is a 403 on
+# execute bit that nginx needs to descend into them - the symptom is a 403 on
 # every request. Set the modes explicitly instead of relying on what came over.
 chown -R www-data:www-data "$SITE_ROOT"
 find "$SITE_ROOT" -type d -exec chmod 755 {} +

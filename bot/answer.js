@@ -8,8 +8,19 @@
 const { T, DATES } = require("./i18n");
 
 const MONTHS = {
-  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
-  jul: 7, aug: 8, sep: 9, sept: 9, oct: 10, nov: 11, dec: 12,
+  jan: 1,
+  feb: 2,
+  mar: 3,
+  apr: 4,
+  may: 5,
+  jun: 6,
+  jul: 7,
+  aug: 8,
+  sep: 9,
+  sept: 9,
+  oct: 10,
+  nov: 11,
+  dec: 12,
 };
 
 function detectLang(text) {
@@ -17,58 +28,252 @@ function detectLang(text) {
   if (/[ऀ-ॿ]/.test(text)) {
     /* Hindi-exclusive forms first: "kitni" is Hindi, "kiti" is Marathi, and
        shared words like "bheed" tell us nothing on their own. */
-    const hiOnly = ["कितनी", "क्या", "कैसे", "कौन", "क्यों", "कब", "और", "मुझे",
-      "बताइए", "बताएं", "जानना", "चाहिए", "कितने"];
+    const hiOnly = [
+      "कितनी",
+      "क्या",
+      "कैसे",
+      "कौन",
+      "क्यों",
+      "कब",
+      "और",
+      "मुझे",
+      "बताइए",
+      "बताएं",
+      "जानना",
+      "चाहिए",
+      "कितने",
+    ];
     if (hiOnly.some((w) => t.includes(w))) return "hi";
-    const mrOnly = ["किती", "आहे", "आहेत", "काय", "कुठे", "कुठला", "कुठली", "नमस्कार",
-      "मेळा", "भेड", "भीड", "स्नानाचे", "स्नानाचा", "दिवसाचे", "आणि", "आणीबाणी",
-      "आणिबाणी", "क्रमांक", "माहिती", "सांग", "दिले", "नाही", "पोहोच", "अंदाज", "स्वागत"];
+    const mrOnly = [
+      "किती",
+      "आहे",
+      "आहेत",
+      "काय",
+      "कुठे",
+      "कुठला",
+      "कुठली",
+      "नमस्कार",
+      "मेळा",
+      "भेड",
+      "भीड",
+      "स्नानाचे",
+      "स्नानाचा",
+      "दिवसाचे",
+      "आणि",
+      "आणीबाणी",
+      "आणिबाणी",
+      "क्रमांक",
+      "माहिती",
+      "सांग",
+      "दिले",
+      "नाही",
+      "पोहोच",
+      "अंदाज",
+      "स्वागत",
+    ];
     if (mrOnly.some((w) => t.includes(w))) return "mr";
     return "hi";
   }
   return "en";
 }
 
-/* Keep Devanagari combining marks (\p{M}) — stripping them destroys Hindi and
+/* Keep Devanagari combining marks (\p{M}) - stripping them destroys Hindi and
    Marathi words, which would silently break every intent match in those languages. */
 function norm(s) {
-  return s.toLowerCase().replace(/[^\p{L}\p{N}\p{M}\s]/gu, " ").replace(/\s+/g, " ").trim();
+  return s
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\p{M}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /* Order matters: the first match wins, so the more specific intents come first.
    "reach" precedes "waters" because a Hindi question like "कैसे पहुंचें नाशिक"
    contains नाशिक, and would otherwise be answered about the water instead of travel. */
 const INTENTS = [
-  { id: "thanks", any: ["thanks", "thank you", "dhanyavad", "धन्यवाद", "आभारी"] },
-  { id: "helpline", any: ["emergency", "helpline", "help", "112", "police", "ambulance",
-    "आपात", "मदद", "112", "पोलीस", "अंबुलेंस", "आणीबाणी", "आणिबाणी", "मदत"] },
-  { id: "akhara", any: ["akhara", "sadhu", "order", "sect", "अखारा", "साधु", "संप्रदाय", "अखारे", "संत"] },
+  {
+    id: "thanks",
+    any: ["thanks", "thank you", "dhanyavad", "धन्यवाद", "आभारी"],
+  },
+  {
+    id: "helpline",
+    any: [
+      "emergency",
+      "helpline",
+      "help",
+      "112",
+      "police",
+      "ambulance",
+      "आपात",
+      "मदद",
+      "112",
+      "पोलीस",
+      "अंबुलेंस",
+      "आणीबाणी",
+      "आणिबाणी",
+      "मदत",
+    ],
+  },
+  {
+    id: "akhara",
+    any: [
+      "akhara",
+      "sadhu",
+      "order",
+      "sect",
+      "अखारा",
+      "साधु",
+      "संप्रदाय",
+      "अखारे",
+      "संत",
+    ],
+  },
   /* "कुठे" is deliberately absent: it is a bare "where", so "त्रिम्बकेश्वर कुठे"
      is a question about the site, not about travel. Travel needs पोहोचे/गाडी. */
-  { id: "reach", any: ["reach", "how to go", "train", "bus", "road", "airport", "station",
-    "कैसे", "कसे", "पहुंच", "पोहोच", "ट्रेन", "बस", "सड़क", "सडक", "हवाई", "स्टेशन",
-    "पोहोचे", "गाडी"] },
-  { id: "quiet", any: ["quiet", "less crowd", "less crowded", "fewer people", "calm", "peaceful",
-    "low crowd", "शांत", "कम भीड़", "कम लोग", "शांत दिन", "शांतता",
-    "शांत", "कमी भीड", "कमी लोक", "स्वच्छ"] },
-  { id: "crowd", any: ["crowd", "crowded", "busy", "how many people", "भीड़", "कितने लोग", "भिड",
-    "भीड", "किती लोक"] },
-  { id: "waters", any: ["ramkund", "ram kund", "kushavarta", "trimbak", "nashik river",
-    "which water", "where to bath", "रामकुंड", "कुषावर्त", "त्रिम्बकेश्वर", "नाशिक", "कौन सा जल", "पाणी", "स्नान"] },
-  { id: "dates", any: ["which day", "what day", "dates", "list", "all days", "auspicious",
-    "कौन से दिन", "कौनसा दिन", "तारीख", "सभी दिन", "सूची", "शुभ दिन",
-    "कोणते दिवस", "कोणता दिवस", "तारीखा", "सर्व दिवस", "यादी", "शुभ दिवस"] },
-  { id: "greet", any: ["hi", "hello", "hey", "namaste", "namaskar", "start",
-    "नमस्ते", "नमस्कार", "शुरू", "मदद", "हेलो", "नमस्"] },
+  {
+    id: "reach",
+    any: [
+      "reach",
+      "how to go",
+      "train",
+      "bus",
+      "road",
+      "airport",
+      "station",
+      "कैसे",
+      "कसे",
+      "पहुंच",
+      "पोहोच",
+      "ट्रेन",
+      "बस",
+      "सड़क",
+      "सडक",
+      "हवाई",
+      "स्टेशन",
+      "पोहोचे",
+      "गाडी",
+    ],
+  },
+  {
+    id: "quiet",
+    any: [
+      "quiet",
+      "less crowd",
+      "less crowded",
+      "fewer people",
+      "calm",
+      "peaceful",
+      "low crowd",
+      "शांत",
+      "कम भीड़",
+      "कम लोग",
+      "शांत दिन",
+      "शांतता",
+      "शांत",
+      "कमी भीड",
+      "कमी लोक",
+      "स्वच्छ",
+    ],
+  },
+  {
+    id: "crowd",
+    any: [
+      "crowd",
+      "crowded",
+      "busy",
+      "how many people",
+      "भीड़",
+      "कितने लोग",
+      "भिड",
+      "भीड",
+      "किती लोक",
+    ],
+  },
+  {
+    id: "waters",
+    any: [
+      "ramkund",
+      "ram kund",
+      "kushavarta",
+      "trimbak",
+      "nashik river",
+      "which water",
+      "where to bath",
+      "रामकुंड",
+      "कुषावर्त",
+      "त्रिम्बकेश्वर",
+      "नाशिक",
+      "कौन सा जल",
+      "पाणी",
+      "स्नान",
+    ],
+  },
+  {
+    id: "dates",
+    any: [
+      "which day",
+      "what day",
+      "dates",
+      "list",
+      "all days",
+      "auspicious",
+      "कौन से दिन",
+      "कौनसा दिन",
+      "तारीख",
+      "सभी दिन",
+      "सूची",
+      "शुभ दिन",
+      "कोणते दिवस",
+      "कोणता दिवस",
+      "तारीखा",
+      "सर्व दिवस",
+      "यादी",
+      "शुभ दिवस",
+    ],
+  },
+  {
+    id: "greet",
+    any: [
+      "hi",
+      "hello",
+      "hey",
+      "namaste",
+      "namaskar",
+      "start",
+      "नमस्ते",
+      "नमस्कार",
+      "शुरू",
+      "मदद",
+      "हेलो",
+      "नमस्",
+    ],
+  },
 ];
 
 /* Explicit date request, e.g. "2 august", "aug 31", "11 september", "31/8/2027".
    The month token allows trailing letters so "august" and "september" match their
    three-letter prefix; a trailing \b would reject them, because "aug" is not a word
    boundary inside "august". */
-const MAP = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
-const DAY_THEN_MONTH = new RegExp("\\b(\\d{1,2})\\s*((?:" + Object.keys(MAP).join("|") + ")[a-z]*)");
-const MONTH_THEN_DAY = new RegExp("\\b((?:" + Object.keys(MAP).join("|") + ")[a-z]*)\\s*(\\d{1,2})");
+const MAP = {
+  jan: 1,
+  feb: 2,
+  mar: 3,
+  apr: 4,
+  may: 5,
+  jun: 6,
+  jul: 7,
+  aug: 8,
+  sep: 9,
+  oct: 10,
+  nov: 11,
+  dec: 12,
+};
+const DAY_THEN_MONTH = new RegExp(
+  "\\b(\\d{1,2})\\s*((?:" + Object.keys(MAP).join("|") + ")[a-z]*)",
+);
+const MONTH_THEN_DAY = new RegExp(
+  "\\b((?:" + Object.keys(MAP).join("|") + ")[a-z]*)\\s*(\\d{1,2})",
+);
 
 function parseDate(raw) {
   const lower = raw.toLowerCase();
@@ -86,9 +291,48 @@ function parseDate(raw) {
 function fmtDay(iso, lang) {
   const dt = new Date(iso + "T12:00:00+05:30");
   const months = {
-    en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
-    hi: ["जनवरी","फ़रवरी","मार्च","अप्रैल","मई","जून","जुलाई","अगस्त","सितंबर","अक्तूबर","नवंबर","दिसंबर"],
-    mr: ["जानेवारी","फेब्रुवारी","मार्च","एप्रिल","मे","जून","जुलै","ऑगस्ट","सप्टेंबर","ऑक्टोबर","नोव्हेंबर","डिसेंबर"],
+    en: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    hi: [
+      "जनवरी",
+      "फ़रवरी",
+      "मार्च",
+      "अप्रैल",
+      "मई",
+      "जून",
+      "जुलाई",
+      "अगस्त",
+      "सितंबर",
+      "अक्तूबर",
+      "नवंबर",
+      "दिसंबर",
+    ],
+    mr: [
+      "जानेवारी",
+      "फेब्रुवारी",
+      "मार्च",
+      "एप्रिल",
+      "मे",
+      "जून",
+      "जुलै",
+      "ऑगस्ट",
+      "सप्टेंबर",
+      "ऑक्टोबर",
+      "नोव्हेंबर",
+      "डिसेंबर",
+    ],
   };
   return `${dt.getDate()} ${months[lang][dt.getMonth()]} ${dt.getFullYear()}`;
 }
@@ -113,7 +357,9 @@ function quietDays(days, n) {
 }
 
 function royalDays(days) {
-  return days.filter((d) => d.classification === "amrit_snan").sort((a, b) => a.score - b.score);
+  return days
+    .filter((d) => d.classification === "amrit_snan")
+    .sort((a, b) => a.score - b.score);
 }
 
 function answer(message, data, langIn) {
@@ -131,11 +377,13 @@ function answer(message, data, langIn) {
   const pd = parseDate(message);
   if (pd) {
     const hit = days.find(
-      (d) => +d.gregorian_date.slice(8, 10) === pd.d && +d.gregorian_date.slice(5, 7) === pd.m
+      (d) =>
+        +d.gregorian_date.slice(8, 10) === pd.d &&
+        +d.gregorian_date.slice(5, 7) === pd.m,
     );
     if (hit) {
       const lines = [
-        `${fmtDay(hit.gregorian_date, lang)} — ${tagFor(hit, lang)}`,
+        `${fmtDay(hit.gregorian_date, lang)} - ${tagFor(hit, lang)}`,
         `${D.bandLine(hit.band)} · ${t.estimateWord.toLowerCase()}`,
         hit.headline_reason,
       ];
@@ -146,7 +394,10 @@ function answer(message, data, langIn) {
 
   let intent = null;
   for (const i of INTENTS) {
-    if (i.any.some((k) => text.includes(k))) { intent = i.id; break; }
+    if (i.any.some((k) => text.includes(k))) {
+      intent = i.id;
+      break;
+    }
   }
 
   switch (intent) {
@@ -157,29 +408,43 @@ function answer(message, data, langIn) {
       return { intent, lang, text: t.greet };
 
     case "helpline": {
-      const nums = (data.golden.helplines && data.golden.helplines.numbers) || [];
+      const nums =
+        (data.golden.helplines && data.golden.helplines.numbers) || [];
       const lines = [t.helplineHeadline, ""];
       for (const n of nums) {
-        if (n.confidence === "confirmed") lines.push(`${n.label_en}: ${n.number}`);
+        if (n.confidence === "confirmed")
+          lines.push(`${n.label_en}: ${n.number}`);
       }
       lines.push("", t.helplineMela);
       return { intent, lang, text: build(t, lines) };
     }
 
     case "akhara":
-      return { intent, lang, text: build(t, [t.watersHeadline, "", t.akharaNote]) };
+      return {
+        intent,
+        lang,
+        text: build(t, [t.watersHeadline, "", t.akharaNote]),
+      };
 
     case "waters":
       return {
-        intent, lang,
-        text: build(t, [t.watersHeadline, "", `· ${t.watersRam}`, `· ${t.watersKush}`, "", t.watersNote]),
+        intent,
+        lang,
+        text: build(t, [
+          t.watersHeadline,
+          "",
+          `· ${t.watersRam}`,
+          `· ${t.watersKush}`,
+          "",
+          t.watersNote,
+        ]),
       };
 
     case "quiet": {
       const picks = quietDays(days, 3);
       const lines = [t.quietHeadline, "", t.quietIntro, ""];
       for (const d of picks) {
-        lines.push(`· ${fmtDay(d.gregorian_date, lang)} — ${D.estTag(d.band)}`);
+        lines.push(`· ${fmtDay(d.gregorian_date, lang)} - ${D.estTag(d.band)}`);
       }
       lines.push("", `${D.quietNote} ${t.quietWhy}`);
       return { intent, lang, text: build(t, lines) };
@@ -189,23 +454,36 @@ function answer(message, data, langIn) {
       const royals = royalDays(days);
       const lines = [t.crowdHeadline, "", t.crowdBands, "", t.crowdPeak, ""];
       for (const d of royals) {
-        lines.push(`· ${fmtDay(d.gregorian_date, lang)} — ${D.bandLine(d.band)} (${t.estimateWord.toLowerCase()})`);
+        lines.push(
+          `· ${fmtDay(d.gregorian_date, lang)} - ${D.bandLine(d.band)} (${t.estimateWord.toLowerCase()})`,
+        );
       }
       return { intent, lang, text: build(t, lines) };
     }
 
     case "reach":
       return {
-        intent, lang,
+        intent,
+        lang,
         text: build(t, [t.reachMsg, "", t.reachNoGuess]),
       };
 
     case "dates": {
       const royals = royalDays(days);
       const lines = [t.royalHeadline, "", t.royalIntro, ""];
-      for (const d of royals) lines.push(`· ${fmtDay(d.gregorian_date, lang)} — ${D.bandLine(d.band)} (${t.estimateWord.toLowerCase()})`);
-      lines.push("", t.allDaysIntro, "", `· ${days.length} days in total, from ${fmtDay(days[0].gregorian_date, lang)} to ${fmtDay(days[days.length - 1].gregorian_date, lang)}.`);
-      lines.push("Ask for quieter days and I will list the least crowded ones.");
+      for (const d of royals)
+        lines.push(
+          `· ${fmtDay(d.gregorian_date, lang)} - ${D.bandLine(d.band)} (${t.estimateWord.toLowerCase()})`,
+        );
+      lines.push(
+        "",
+        t.allDaysIntro,
+        "",
+        `· ${days.length} days in total, from ${fmtDay(days[0].gregorian_date, lang)} to ${fmtDay(days[days.length - 1].gregorian_date, lang)}.`,
+      );
+      lines.push(
+        "Ask for quieter days and I will list the least crowded ones.",
+      );
       return { intent, lang, text: build(t, lines) };
     }
 
@@ -214,4 +492,11 @@ function answer(message, data, langIn) {
   }
 }
 
-module.exports = { answer, detectLang, parseDate, fmtDay, quietDays, royalDays };
+module.exports = {
+  answer,
+  detectLang,
+  parseDate,
+  fmtDay,
+  quietDays,
+  royalDays,
+};

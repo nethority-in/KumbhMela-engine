@@ -1,13 +1,34 @@
 {
   "_file": "holidays.json",
-  "_purpose": "Fixed-date national and Maharashtra state holidays used by the crowd model. MOVABLE religious festivals (Ganesh Chaturthi, Krishna Janmashtami, etc.) are NOT listed here — they are computed from panchang by the engine, per the brief ('do not rely on 2027 school calendars').",
-  "_status": "Fixed-date entries below are stable year-on-year. The full GAZETTED 2027 holiday list (including movable and state-declared holidays) is not yet published — reconcile when released (UNVERIFIED.md #15).",
+  "_purpose": "Fixed-date national and Maharashtra state holidays used by the crowd model. MOVABLE religious festivals (Ganesh Chaturthi, Krishna Janmashtami, etc.) are NOT listed here - they are computed from panchang by the engine, per the brief ('do not rely on 2027 school calendars').",
+  "_status": "Fixed-date entries below are stable year-on-year. The full GAZETTED 2027 holiday list (including movable and state-declared holidays) is not yet published - reconcile when released (UNVERIFIED.md #15).",
   "last_reviewed": "2026-09-15",
   "fixed_date_holidays_2027": [
-    {"date": "2027-01-26", "name_en": "Republic Day", "scope": "national", "confidence": "confirmed"},
-    {"date": "2027-05-01", "name_en": "Maharashtra Day", "scope": "state-mh", "confidence": "confirmed"},
-    {"date": "2027-08-15", "name_en": "Independence Day", "scope": "national", "confidence": "confirmed", "note": "Falls ~2 weeks after the first Amrit Snan; relevant to the Aug bathing window."},
-    {"date": "2027-10-02", "name_en": "Gandhi Jayanti", "scope": "national", "confidence": "confirmed"}
+    {
+      "date": "2027-01-26",
+      "name_en": "Republic Day",
+      "scope": "national",
+      "confidence": "confirmed"
+    },
+    {
+      "date": "2027-05-01",
+      "name_en": "Maharashtra Day",
+      "scope": "state-mh",
+      "confidence": "confirmed"
+    },
+    {
+      "date": "2027-08-15",
+      "name_en": "Independence Day",
+      "scope": "national",
+      "confidence": "confirmed",
+      "note": "Falls ~2 weeks after the first Amrit Snan; relevant to the Aug bathing window."
+    },
+    {
+      "date": "2027-10-02",
+      "name_en": "Gandhi Jayanti",
+      "scope": "national",
+      "confidence": "confirmed"
+    }
   ],
   "movable_festivals_note": "Ganesh Chaturthi (Bhadrapada Shukla Chaturthi) falls in early-mid September 2027 and is a MAJOR crowd amplifier in Maharashtra near the third Amrit Snan. Its exact date is computed by the engine, not hard-coded here. Krishna Janmashtami, Nag Panchami, etc. likewise come from the engine."
 }

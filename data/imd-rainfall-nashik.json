@@ -1,13 +1,22 @@
 {
   "_file": "imd-rainfall-nashik.json",
   "_purpose": "Historical monsoon intensity for Nashik, by week, used by the crowd model's monsoon modifier.",
-  "_STATUS": "PLACEHOLDER — NOT SOURCED IMD DATA. The values below are a coarse shape from general SW-monsoon climatology (onset ~mid-June, peak July–August, retreat late September). They must be REPLACED with sourced IMD Nashik historical weekly/monthly rainfall normals, and the peak weeks re-derived FROM the data (do not assume). Until then the monsoon modifier's magnitude should be treated as low-confidence. See UNVERIFIED.md #13.",
+  "_STATUS": "PLACEHOLDER - NOT SOURCED IMD DATA. The values below are a coarse shape from general SW-monsoon climatology (onset ~mid-June, peak July–August, retreat late September). They must be REPLACED with sourced IMD Nashik historical weekly/monthly rainfall normals, and the peak weeks re-derived FROM the data (do not assume). Until then the monsoon modifier's magnitude should be treated as low-confidence. See UNVERIFIED.md #13.",
   "last_reviewed": "2026-09-15",
-  "intensity_scale": "one of: peak | high | moderate | low | dry — mapped to weights in crowd-model/weights.config.json:monsoon_intensity",
+  "intensity_scale": "one of: peak | high | moderate | low | dry - mapped to weights in crowd-model/weights.config.json:monsoon_intensity",
   "by_month": {
-    "01": "dry", "02": "dry", "03": "dry", "04": "dry", "05": "low",
-    "06": "high", "07": "peak", "08": "peak", "09": "high",
-    "10": "moderate", "11": "low", "12": "dry"
+    "01": "dry",
+    "02": "dry",
+    "03": "dry",
+    "04": "dry",
+    "05": "low",
+    "06": "high",
+    "07": "peak",
+    "08": "peak",
+    "09": "high",
+    "10": "moderate",
+    "11": "low",
+    "12": "dry"
   },
   "weekly_overrides": {
     "_note": "Optional finer overrides keyed by ISO week number once real IMD weekly normals are loaded. Empty until sourced.",

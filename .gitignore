@@ -1,6 +1,6 @@
 .DS_Store
 __pycache__
 *.pyc
-# Local virtualenv for the engine — not for deployment
+# Local virtualenv for the engine - not for deployment
 .venv/
 bot/.data/

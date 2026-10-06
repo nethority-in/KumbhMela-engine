@@ -1,7 +1,7 @@
-# Manual server setup — exact commands
+# Manual server setup - exact commands
 
-*Host: DigitalOcean Droplet (Ubuntu 24.04). Two repos, one unprivileged service
-user, nginx for TLS, systemd for the bot.*
+_Host: DigitalOcean Droplet (Ubuntu 24.04). Two repos, one unprivileged service
+user, nginx for TLS, systemd for the bot._
 
 Run the numbered blocks in order. Blocks A–C are on your **Mac**; everything from
 D onwards is on the **Droplet**, reached over SSH.
@@ -18,21 +18,21 @@ pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
 `pbcopy` puts the **public** key on your clipboard. Never copy
-`id_ed25519` without `.pub` — that is the private key and it must stay on this
+`id_ed25519` without `.pub` - that is the private key and it must stay on this
 machine.
 
 ## B. The key on GitHub
 
 **Settings → SSH and GPG keys → New SSH key**
 
-| Field | Value |
-|---|---|
-| Title | `kumbh-deploy (MacBook)` |
-| Key type | Authentication Key |
-| Key | paste from clipboard |
+| Field    | Value                    |
+| -------- | ------------------------ |
+| Title    | `kumbh-deploy (MacBook)` |
+| Key type | Authentication Key       |
+| Key      | paste from clipboard     |
 
 Using an **account key** rather than a per-repo deploy key, because the same key
-must read *two* repos and a deploy key is scoped to one repo.
+must read _two_ repos and a deploy key is scoped to one repo.
 
 To confirm it works:
 
@@ -45,12 +45,12 @@ ssh -T git@github.com
 
 **DigitalOcean → Droplets → Create**
 
-| Field | Value |
-|---|---|
-| Image | Ubuntu 24.04 LTS x64 |
-| Authentication | **SSH key** → the one from step A |
-| Size | smallest that fits; the guide and bot are both light |
-| Region | closest to your users — Mumbai if offered |
+| Field          | Value                                                |
+| -------------- | ---------------------------------------------------- |
+| Image          | Ubuntu 24.04 LTS x64                                 |
+| Authentication | **SSH key** → the one from step A                    |
+| Size           | smallest that fits; the guide and bot are both light |
+| Region         | closest to your users - Mumbai if offered            |
 
 Then, from your Mac:
 
@@ -63,14 +63,14 @@ ssh root@<DROPLET_IP>
 TLS cannot be issued until DNS resolves, so do this before the certificate step.
 
 Both records already exist and point at `139.59.46.221`, the Droplet. The apex
-`mahakumbh.net` points at `104.248.165.174`, which is EasyPanel — that is the
+`mahakumbh.net` points at `104.248.165.174`, which is EasyPanel - that is the
 landing page and is a separate machine.
 
-| Type | Host | Value | Serves |
-|---|---|---|---|
-| A | `@` | `104.248.165.174` | landing page (EasyPanel) |
-| A | `app` | `139.59.46.221` | the guide (this Droplet) |
-| A | `api` | `139.59.46.221` | the bot webhook (this Droplet) |
+| Type | Host  | Value             | Serves                         |
+| ---- | ----- | ----------------- | ------------------------------ |
+| A    | `@`   | `104.248.165.174` | landing page (EasyPanel)       |
+| A    | `app` | `139.59.46.221`   | the guide (this Droplet)       |
+| A    | `api` | `139.59.46.221`   | the bot webhook (this Droplet) |
 
 **Confirm the TTL has actually expired before running certbot.** Certbot validates
 from several public resolvers, and one of them still returning an old answer is
@@ -125,7 +125,7 @@ sudo bash /opt/kumbh/pipeline/deploy/droplet/run-pipeline.sh
 
 **Read the self-check output.** On a current checkout it reports a mismatch for
 2 Aug 2027 (declared "Shravan Shukla", computed "Ashadha Krishna Amavasya"), so
-the script will refuse to publish. That is intentional — an unverified date is
+the script will refuse to publish. That is intentional - an unverified date is
 worse than no date. Once a panchang authority has ruled on it, re-run with
 `--force` and record the decision in `CHANGELOG.md`.
 
@@ -172,7 +172,7 @@ sudo rsync -a --delete --exclude '.git' /opt/kumbh/site/ /var/www/kumbh-guide/
 sudo bash /opt/kumbh/pipeline/deploy/droplet/run-pipeline.sh
 
 # the kill switch: stop replying without stopping the webhook
-sudo systemctl stop kumbh-bot      # hard kill — no replies, no Meta charges
+sudo systemctl stop kumbh-bot      # hard kill - no replies, no Meta charges
 
 # certificates
 sudo certbot renew --dry-run
@@ -180,13 +180,13 @@ sudo certbot renew --dry-run
 
 ## Layout on the server
 
-| Path | What |
-|---|---|
-| `/opt/kumbh/site` | guide repo (cloned by `kumbh`) |
-| `/opt/kumbh/pipeline` | engine + bot repo |
-| `/var/www/kumbh-guide` | what nginx actually serves |
-| `/var/lib/kumbh-bot` | cost log — **this is why the systemd unit exists** |
-| `/etc/kumbh-bot.env` | secrets, mode `640`, never in git |
+| Path                   | What                                               |
+| ---------------------- | -------------------------------------------------- |
+| `/opt/kumbh/site`      | guide repo (cloned by `kumbh`)                     |
+| `/opt/kumbh/pipeline`  | engine + bot repo                                  |
+| `/var/www/kumbh-guide` | what nginx actually serves                         |
+| `/var/lib/kumbh-bot`   | cost log - **this is why the systemd unit exists** |
+| `/etc/kumbh-bot.env`   | secrets, mode `640`, never in git                  |
 
 ## Two things that will bite you if forgotten
 

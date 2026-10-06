@@ -1,39 +1,73 @@
 {
   "_file": "cost.config.json",
   "_purpose": "All WhatsApp bot cost inputs, spend caps, rate limits, and kill-switch thresholds in ONE editable file. Change a number here to re-model or to retune the guardrails; no code change needed.",
-  "_verify_before_launch": "Rates below are from secondary sources (Sep 2026). Meta promised the exact 1-Oct-2026 rate card by 1 Sep 2026 — PIN these to the official Meta developer pricing page before go-live. See UNVERIFIED.md #17.",
+  "_verify_before_launch": "Rates below are from secondary sources (Sep 2026). Meta promised the exact 1-Oct-2026 rate card by 1 Sep 2026 - PIN these to the official Meta developer pricing page before go-live. See UNVERIFIED.md #17.",
   "version": "0.1.0-draft",
   "last_edited": "2026-09-15",
   "currency": "INR",
   "fx_note": "USD figures in COST_MODEL.md use ~₹87/USD (approx, 2026). Verify at launch.",
 
   "meta_rates_india_inr": {
-    "service_message": {"value": 0.115, "billable_from": "2026-10-01", "conflict": "Some sources say 0.145. Pin to official Meta rate card.", "note": "Free-form reply in the open 24h window. THIS is our main cost line."},
-    "utility_template": {"value": 0.115, "conflict": "0.115 vs 0.145 across sources.", "note": "Needed to reply OUTSIDE the 24h window (re-engagement)."},
-    "authentication_template": {"value": 0.115, "note": "Not used by this bot (no OTP/login)."},
-    "marketing_template": {"value": 0.8631, "note": "NEVER used. No ads, no marketing — constraint #10."}
+    "service_message": {
+      "value": 0.115,
+      "billable_from": "2026-10-01",
+      "conflict": "Some sources say 0.145. Pin to official Meta rate card.",
+      "note": "Free-form reply in the open 24h window. THIS is our main cost line."
+    },
+    "utility_template": {
+      "value": 0.115,
+      "conflict": "0.115 vs 0.145 across sources.",
+      "note": "Needed to reply OUTSIDE the 24h window (re-engagement)."
+    },
+    "authentication_template": {
+      "value": 0.115,
+      "note": "Not used by this bot (no OTP/login)."
+    },
+    "marketing_template": {
+      "value": 0.8631,
+      "note": "NEVER used. No ads, no marketing - constraint #10."
+    }
   },
 
   "meta_free_allowances": {
-    "service_messages_free_per_number_per_month": {"value": 1000, "resets": "monthly", "rollover": false, "note": "Charges apply only from the 1,001st service message that month."},
-    "free_entry_point_window_hours": {"value": 72, "applies_to": "Click-to-WhatsApp ads / FB Page CTA only", "we_qualify": false, "note": "wa.me deep links do NOT qualify — our conversations are ordinary user-initiated service windows."}
+    "service_messages_free_per_number_per_month": {
+      "value": 1000,
+      "resets": "monthly",
+      "rollover": false,
+      "note": "Charges apply only from the 1,001st service message that month."
+    },
+    "free_entry_point_window_hours": {
+      "value": 72,
+      "applies_to": "Click-to-WhatsApp ads / FB Page CTA only",
+      "we_qualify": false,
+      "note": "wa.me deep links do NOT qualify - our conversations are ordinary user-initiated service windows."
+    }
   },
 
   "llm_cost_estimate": {
-    "_note": "A small, cheap, CONFIGURABLE model used only for phrasing + intent parsing — never for factual content. Cost is separate from Meta message cost. Placeholder pending the chosen model's real token price.",
-    "share_of_messages_using_llm": {"value": 0.30, "note": "Target: 70%+ answered from cache/canned with NO LLM call (brief). This saves LLM cost, NOT Meta cost."},
-    "avg_inr_per_llm_message": {"value": 0.05, "confidence": "placeholder — replace with real per-token cost of the chosen model"}
+    "_note": "A small, cheap, CONFIGURABLE model used only for phrasing + intent parsing - never for factual content. Cost is separate from Meta message cost. Placeholder pending the chosen model's real token price.",
+    "share_of_messages_using_llm": {
+      "value": 0.3,
+      "note": "Target: 70%+ answered from cache/canned with NO LLM call (brief). This saves LLM cost, NOT Meta cost."
+    },
+    "avg_inr_per_llm_message": {
+      "value": 0.05,
+      "confidence": "placeholder - replace with real per-token cost of the chosen model"
+    }
   },
 
   "conversation_shape": {
-    "avg_messages_per_conversation": {"value": 1.5, "note": "Batched: each answer is ONE message (constraint). Assume initial answer + occasional single follow-up. Estimate — flag."}
+    "avg_messages_per_conversation": {
+      "value": 1.5,
+      "note": "Batched: each answer is ONE message (constraint). Assume initial answer + occasional single follow-up. Estimate - flag."
+    }
   },
 
   "guardrails": {
     "per_number_rate_limit": {
       "messages_per_number_per_day": 20,
       "burst_per_number_per_minute": 5,
-      "on_exceed": "Serve one cached 'you have reached today's limit — here is the helpline' reply, then stop replying to that number until reset (an un-sent reply incurs no Meta charge)."
+      "on_exceed": "Serve one cached 'you have reached today's limit - here is the helpline' reply, then stop replying to that number until reset (an un-sent reply incurs no Meta charge)."
     },
     "global_daily_spend_cap_inr": {
       "value": 5000,
@@ -55,7 +89,15 @@
 
   "logging": {
     "log_cost_per_conversation": true,
-    "fields": ["phone_hash", "inbound_count", "outbound_count", "used_llm", "meta_inr", "llm_inr", "window_state"],
+    "fields": [
+      "phone_hash",
+      "inbound_count",
+      "outbound_count",
+      "used_llm",
+      "meta_inr",
+      "llm_inr",
+      "window_state"
+    ],
     "privacy": "Store a salted hash of the phone number, not the raw number, in cost logs. Raw number lives only in the session store per the DPDP privacy design (D7)."
   }
 }
