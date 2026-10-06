@@ -101,7 +101,12 @@ su - "$APP_USER" -c "test -d $APP_HOME/pipeline/.git" || \
 
 log "Publishing the guide into $SITE_ROOT"
 rsync -a --delete --exclude '.git' "$APP_HOME/site/" "$SITE_ROOT/"
+# rsync carries the source umask across, which leaves directories without the
+# execute bit that nginx needs to descend into them — the symptom is a 403 on
+# every request. Set the modes explicitly instead of relying on what came over.
 chown -R www-data:www-data "$SITE_ROOT"
+find "$SITE_ROOT" -type d -exec chmod 755 {} +
+find "$SITE_ROOT" -type f -exec chmod 644 {} +
 
 # --------------------------------------------------------------------------- #
 log "Python virtualenv for the pipeline"

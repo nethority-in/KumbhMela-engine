@@ -36,10 +36,24 @@ su - "$APP_USER" -c "cd $PIPELINE_DIR && .venv/bin/python engine/panchang_engine
 # The engine prints a SELF-CHECK block. A line whose "declared" and "computed"
 # differ is a real conflict that needs a human, not a warning to scroll past.
 if grep -q 'declared:' /tmp/engine.out; then
+  # Compare the TITHI, not the whole label. Sources name a tithi as
+  # "<masa> <paksha> <tithi>" (or just "<masa> <tithi>") and the engine as
+  # "<masa> <paksha> <tithi>", but the masa is spelled differently between them
+  # (Shravan / Shravana) and a source may omit the paksha where the engine
+  # always writes it (Shravan Amavasya vs Shravana Krishna Amavasya). Those are
+  # naming conventions, not disagreements. The tithi itself is always the final
+  # word — Amavasya, Purnima, Ekadashi, Pratipada and so on — so compare that.
+  # A different final word means a genuinely different tithi, which is the
+  # 2027-08-02 case: "Shukla" (declined) against "Amavasya" (computed).
   MISMATCH=$(awk '
-    /declared:/ { split($0, a, "declared: "); d = a[2] }
-    /computed:/ { split($0, b, "computed: "); c = b[2];
-                  if (d != "" && index(d, c) == 0) print "  declared: " d "\n  computed: " c }
+    function trim(s) { gsub(/^[[:space:]]+|[[:space:]]+$/, "", s); return s }
+    function tithi(s,   t) { t = s; sub(/[[:space:]]*\(.*/, "", t); return trim(t) }
+    function lastword(s,   n, a) { n = split(s, a, " "); return a[n] }
+    /declared:/ { split($0, a, "declared: "); d = tithi(trim(a[2])) }
+    /computed:/ { split($0, b, "computed: "); c = tithi(trim(b[2]))
+                  if (d != "" && c != "" && lastword(d) != lastword(c))
+                    print "  declared: " d "\n  computed: " c
+                  d = "" }
   ' /tmp/engine.out)
 
   if [ -n "$MISMATCH" ]; then
