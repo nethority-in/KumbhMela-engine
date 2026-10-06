@@ -65,18 +65,27 @@ log "SSH access for $APP_USER"
 # The deploy key you added to GitHub is NOT in root's authorized_keys. Without
 # this, `git pull` inside the service user cannot read the repos.
 install -d -m 700 -o "$APP_USER" -g "$APP_USER" "/home/$APP_USER/.ssh"
+
 if [ -f /root/.ssh/id_ed25519.pub ]; then
   install -m 600 -o "$APP_USER" -g "$APP_USER" /root/.ssh/id_ed25519 \
     "/home/$APP_USER/.ssh/id_ed25519"
   install -m 644 -o "$APP_USER" -g "$APP_USER" /root/.ssh/id_ed25519.pub \
     "/home/$APP_USER/.ssh/id_ed25519.pub"
-  chown "$APP_USER:$APP_USER" "/home/$APP_USER/.ssh/known_hosts"
-  touch "/home/$APP_USER/.ssh/known_hosts"
+else
+  warn "no /root/.ssh/id_ed25519.pub — cloning as $APP_USER may fail."
+  warn "run: ssh-keygen -t ed25519 -N '' (accept the default path), then add the pubkey to GitHub."
 fi
-echo 'StrictHostKeyChecking accept-new' > "/home/$APP_USER/.ssh/config"
-chown "$APP_USER:$APP_USER" "/home/$APP_USER/.ssh/config"
-chmod 600 "/home/$APP_USER/.ssh/config"
-echo "Host github.com" >> "/home/$APP_USER/.ssh/config"
+
+# Create the files before chowning them, or chown fails on a missing path and,
+# under `set -e`, takes the whole script down.
+touch "/home/$APP_USER/.ssh/known_hosts"
+cat > "/home/$APP_USER/.ssh/config" <<SSHCONF
+Host github.com
+  StrictHostKeyChecking accept-new
+SSHCONF
+chown -R "$APP_USER:$APP_USER" "/home/$APP_USER/.ssh"
+chmod 700 "/home/$APP_USER/.ssh"
+chmod 600 "/home/$APP_USER/.ssh/config" "/home/$APP_USER/.ssh/known_hosts"
 
 # git refuses to operate on a repo owned by another user. Harmless here, but it
 # produces a confusing "dubious ownership" error, so it is pre-empted.
