@@ -7,6 +7,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
+const { pool } = require("./db");
 
 const DATA_DIR = process.env.BOT_DATA_DIR || path.join(__dirname, ".data");
 const SALT = process.env.BOT_HASH_SALT || "change-me-before-launch";
@@ -128,7 +129,7 @@ function check(phone, g) {
 
 /* Logs spend. Counters were already consumed by check(), so they are not
    touched here - this must stay the single place Meta cost is accounted. */
-function record(phone, intent, usedLlm, g, lang) {
+async function record(phone, intent, usedLlm, g, lang, text) {
   const nowDay = today();
   const h = hashPhone(phone);
   let r = perNumber.get(h);
@@ -149,6 +150,17 @@ function record(phone, intent, usedLlm, g, lang) {
   const llmInr = usedLlm ? g.llmPerMsg : 0;
 
   r.monthSent += 1;
+  perNumber.set(h, r);
+  dailyInr += metaInr + llmInr;
+  try {
+    await pool.query(
+      "INSERT INTO conversations (phone_hash, lang, role, text, intent, used_llm, meta_inr, llm_inr, window_state, created_at) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,NOW())",
+      [h, lang || "en", "assistant", text || "", intent, !!usedLlm, metaInr, llmInr, billable ? "billable" : "free"]
+    );
+  } catch (e) {
+    console.error("[store] pg insert failed:", e.message);
+  }
+
   perNumber.set(h, r);
   dailyInr += metaInr + llmInr;
 

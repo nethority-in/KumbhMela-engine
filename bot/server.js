@@ -11,6 +11,7 @@ const { answer } = require("./answer");
 const { sendText, ack, DRY } = require("./meta");
 const store = require("./store");
 const data = require("./data");
+const { pool } = require("./db");
 
 const g = store.load(data.cost);
 store.loadPersisted();
@@ -122,7 +123,7 @@ async function handleMessage(from, text) {
             ? "आजची मर्यादा संपली आहे. उद्या पुन्हा विचारू शकता. आणीबाणीसाठी 112."
             : "That is all for today. You can ask again tomorrow. For an emergency, 112.";
       await sendText(from, notice);
-      store.record(from, "rate_limit_notice", false, g, lang);
+      await store.record(from, "rate_limit_notice", false, g, lang);
     } else {
       console.log(
         `[gate] reply suppressed for ${store.hashPhone(from)}: ${gate.reason}`,
@@ -134,7 +135,7 @@ async function handleMessage(from, text) {
   const lang = langFor(from, text, sessions);
   const res = answer(text, data, lang);
   const usedLlm = false; /* cache-first: the answer engine never calls a model */
-  const spend = store.record(from, res.intent, usedLlm, g, res.lang);
+  const spend = await store.record(from, res.intent, usedLlm, g, res.lang);
   await sendText(from, res.text);
   const t = store.tier(g);
   console.log(
@@ -186,6 +187,42 @@ const server = http.createServer(async (req, res) => {
       }
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
       return res.end(statsHTML(aggregateStats()));
+    }
+
+    if (req.method === "POST" && url.pathname === "/track-visit") {
+      const chunks = [];
+      for await (const c of req) chunks.push(c);
+      let body = {};
+      try { body = JSON.parse(Buffer.concat(chunks).toString("utf8")); } catch {}
+      try {
+        await pool.query(
+          "INSERT INTO website_visits (page, device, lang, created_at) VALUES ($1,$2,$3,NOW())",
+          [body.page || "/", body.device || "desktop", body.lang || "en"]
+        );
+      } catch {}
+      return ack(res);
+    }
+
+    if (req.method === "GET" && url.pathname === "/stats/json") {
+      try {
+        const [convRes, visitRes, byLang, byIntent, byDay] = await Promise.all([
+          pool.query("SELECT COUNT(*)::int AS total_conversations, COUNT(*) FILTER (WHERE window_state='free_allowance')::int AS free_count FROM conversations"),
+          pool.query("SELECT COUNT(*)::int AS total_visits FROM website_visits"),
+          pool.query("SELECT lang, COUNT(*)::int AS count FROM conversations GROUP BY lang"),
+          pool.query("SELECT intent, COUNT(*)::int AS count FROM conversations WHERE intent IS NOT NULL GROUP BY intent"),
+          pool.query("SELECT DATE(created_at) AS day, COUNT(*)::int AS messages FROM conversations GROUP BY DATE(created_at) ORDER BY day DESC"),
+        ]);
+        return res.end(JSON.stringify({
+          total_conversations: convRes.rows[0].total_conversations,
+          free_conversations: convRes.rows[0].free_count,
+          total_visits: visitRes.rows[0].total_visits,
+          by_lang: byLang.rows,
+          by_intent: byIntent.rows,
+          by_day: byDay.rows,
+        }));
+      } catch (e) {
+        res.writeHead(500); return res.end(JSON.stringify({ error: e.message }));
+      }
     }
 
     if (req.method === "POST" && url.pathname === "/webhook") {

@@ -1,0 +1,23 @@
+{
+  "name": "kumbh-2027",
+  "version": "1.0.0",
+  "description": "An independent, non-governmental information service for pilgrims attending the Nashik–Trimbakeshwar Simhastha Kumbh Mela 2027. It surfaces **every** auspicious bathing day - not only the three headline Amrit Snan dates - with a transparent, labelled crowd **estimate** and plain-language significance, so a pilgrim can choose the day that fits them instead of everyone converging on the same three.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nethority-in/KumbhMela-engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nethority-in/KumbhMela-engine/issues"
+  },
+  "homepage": "https://github.com/nethority-in/KumbhMela-engine#readme",
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}
