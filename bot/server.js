@@ -145,7 +145,7 @@ async function handleMessage(from, text) {
 
   const res = answer(text, data, lang);
   const usedLlm = false; /* cache-first: the answer engine never calls a model */
-  const spend = await store.record(from, res.intent, usedLlm, g, res.lang);
+  const spend = await store.record(from, res.intent, usedLlm, g, res.lang, res.text);
   await sendText(from, res.text);
   const t = store.tier(g);
   console.log(
@@ -331,12 +331,28 @@ const server = http.createServer(async (req, res) => {
     if (req.method === "POST" && url.pathname === "/webhook") {
       const chunks = [];
       for await (const c of req) chunks.push(c);
+      const raw = Buffer.concat(chunks).toString("utf8");
+      const isTwilio = req.headers["content-type"]?.includes("application/x-www-form-urlencoded") || raw.startsWith("From=");
+
+      if (isTwilio) {
+        // Parse Twilio form-urlencoded form data.
+        const params = new URLSearchParams(raw);
+        const from = params.get("From") || "";
+        const text = params.get("Body") || "";
+        ack(res);
+        if (from && text) {
+          handleMessage(from.replace(/^whatsapp:/, ""), text).catch((e) =>
+            console.error("[bot] error:", e.message),
+          );
+        }
+        return;
+      }
+
+      // Fallback: treat as Meta JSON (keep for backward compat during migration)
       let body = {};
       try {
-        body = JSON.parse(Buffer.concat(chunks).toString("utf8"));
-      } catch {
-        /* ignore */
-      }
+        body = JSON.parse(raw);
+      } catch {}
 
       const jobs = [];
       for (const entry of body.entry || []) {
@@ -353,7 +369,7 @@ const server = http.createServer(async (req, res) => {
           }
         }
       }
-      ack(res); /* always ack first - Meta retries on anything slow */
+      ack(res);
       await Promise.all(jobs);
       return;
     }

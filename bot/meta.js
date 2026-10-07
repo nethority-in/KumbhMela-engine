@@ -1,42 +1,44 @@
 "use strict";
 
-/* WhatsApp Cloud API sender. Direct (no BSP).
-   DRY_RUN=true makes every send a no-op that only logs, so the whole bot can be
-   exercised end to end without Meta credentials or spending anything. */
+/* WhatsApp sender via Twilio.
+   DRY_RUN=true makes every send a no-op that only logs, so the bot can be
+   exercised without Twilio credentials or spending anything. */
 
 const DRY = process.env.DRY_RUN !== "false";
-const TOKEN = process.env.WHATSAPP_TOKEN || "";
-const PHONE_ID = process.env.WHATSAPP_PHONE_ID || "";
-const API_VER = process.env.WHATSAPP_API_VERSION || "v21.0";
+const ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID || "";
+const AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN || "";
+const FROM_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || "";
+
+const twilio = require("twilio");
+const client = DRY ? null : twilio(ACCOUNT_SID, AUTH_TOKEN);
 
 async function sendText(to, body) {
   if (DRY) {
     console.log(`[dry-run] -> ${to}: ${JSON.stringify(body.slice(0, 120))}...`);
     return { ok: true, dry: true };
   }
-  if (!TOKEN || !PHONE_ID) throw new Error("WHATSAPP_TOKEN and WHATSAPP_PHONE_ID must be set when DRY_RUN=false");
-
-  const url = `https://graph.facebook.com/${API_VER}/${PHONE_ID}/messages`;
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { Authorization: `Bearer ${TOKEN}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      messaging_product: "whatsapp",
-      recipient_type: "individual",
-      to,
-      type: "text",
-      text: { preview_url: false, body },
-    }),
-  });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok) {
-    console.error("[meta] send failed", res.status, JSON.stringify(json));
-    throw new Error(`meta send failed: ${res.status}`);
+  if (!ACCOUNT_SID || !AUTH_TOKEN || !FROM_NUMBER) {
+    throw new Error("TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_WHATSAPP_NUMBER must be set when DRY_RUN=false");
   }
-  return json;
+
+  // Twilio uses whatsapp:+14155238886 as 'from', and the to must be in same format
+  const from = FROM_NUMBER.startsWith("whatsapp:") ? FROM_NUMBER : `whatsapp:${FROM_NUMBER}`;
+  const toFormatted = to.startsWith("whatsapp:") ? to : `whatsapp:${to}`;
+
+  try {
+    const message = await client.messages.create({
+      from,
+      to: toFormatted,
+      body,
+    });
+    return { ok: true, sid: message.sid };
+  } catch (err) {
+    console.error("[twilio] send failed:", err.message);
+    throw new Error(`twilio send failed: ${err.message}`);
+  }
 }
 
-/* Meta retries on anything that is not a fast 200, so we always 200. */
+/* Twilio retries on non-200, so we always 200. */
 function ack(res) {
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify({ ok: true }));
