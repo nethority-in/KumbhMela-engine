@@ -221,13 +221,23 @@ const server = http.createServer(async (req, res) => {
         return res.end(JSON.stringify({ error: 'API key not configured' }));
       }
 
+      // Build system prompt dynamically from the current calendar.json
+      const calendar = data.calendar || {};
+      const days = calendar.days || [];
+      const royal = days.filter(d => d.classification === "amrit_snan");
+      const royalList = royal.map(d => d.gregorian_date || "unknown").join(", ");
       const systemPrompt = [
-        'You are a helpful assistant for the Simhastha Kumbh Mela 2027 guide website.',
-        'Answer questions about bathing days, crowd estimates, travel tips, and practical info.',
-        'Keep answers concise, friendly, and in the same language the user wrote.',
-        'Never say a day is safe or unsafe. Never recommend skipping a day.',
-        'All crowd figures are estimates. Use the calendar data when possible.',
-      ].join(' ');
+        "You are a helpful assistant for the Simhastha Kumbh Mela 2027 guide website.",
+        "Answer only based on the official calendar data provided below.",
+        "Never guess or invent dates.",
+        "Keep responses concise.",
+        "",
+        "IMPORTANT - Only share dates that match exactly with the calendar data:",
+        royal.length > 0 ? royalList : "No royal bathing days found in calendar.json",
+        "",
+        "If the user asks about dates, check this list and share the exact date.",
+        "If the calendar data is missing, say so politely.",
+      ].join(" ");
 
       const messages = body.messages || [{ role: 'user', content: body.text || '' }];
 
