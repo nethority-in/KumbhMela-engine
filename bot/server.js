@@ -243,7 +243,7 @@ const server = http.createServer(async (req, res) => {
             'anthropic-version': '2023-06-01',
           },
           body: JSON.stringify({
-            model: 'claude-3-5-sonnet-20241022',
+            model: 'claude-3-sonnet-20240229',
             max_tokens: 1024,
             system: systemPrompt,
             messages: messages,
