@@ -133,6 +133,16 @@ async function handleMessage(from, text) {
   }
 
   const lang = langFor(from, text, sessions);
+  // Record the incoming user message so it is searchable.
+  try {
+    await pool.query(
+      "INSERT INTO conversations (phone_hash, lang, role, text, intent, used_llm, meta_inr, llm_inr, window_state, created_at) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,now())",
+      [store.hashPhone(from), lang, "user", text, null, false, 0, 0, "free"]
+    );
+  } catch (e) {
+    console.error("[server] failed to record user message:", e.message);
+  }
+
   const res = answer(text, data, lang);
   const usedLlm = false; /* cache-first: the answer engine never calls a model */
   const spend = await store.record(from, res.intent, usedLlm, g, res.lang);
@@ -215,12 +225,13 @@ const server = http.createServer(async (req, res) => {
 
     if (req.method === "GET" && url.pathname === "/stats/json") {
       try {
-        const [convRes, visitRes, byLang, byIntent, byDay] = await Promise.all([
+        const [convRes, visitRes, byLang, byIntent, byDay, topMsgs] = await Promise.all([
           pool.query("SELECT COUNT(*)::int AS total_conversations, COUNT(*) FILTER (WHERE window_state='free_allowance')::int AS free_count FROM conversations"),
           pool.query("SELECT COUNT(*)::int AS total_visits FROM website_visits"),
           pool.query("SELECT lang, COUNT(*)::int AS count FROM conversations GROUP BY lang"),
           pool.query("SELECT intent, COUNT(*)::int AS count FROM conversations WHERE intent IS NOT NULL GROUP BY intent"),
           pool.query("SELECT DATE(created_at) AS day, COUNT(*)::int AS messages FROM conversations GROUP BY DATE(created_at) ORDER BY day DESC"),
+          pool.query("SELECT text, COUNT(*)::int AS count FROM conversations WHERE role='user' GROUP BY text ORDER BY count DESC LIMIT 10"),
         ]);
         return res.end(JSON.stringify({
           total_conversations: convRes.rows[0].total_conversations,
@@ -229,6 +240,7 @@ const server = http.createServer(async (req, res) => {
           by_lang: byLang.rows,
           by_intent: byIntent.rows,
           by_day: byDay.rows,
+          top_messages: topMsgs.rows,
         }));
       } catch (e) {
         res.writeHead(500); return res.end(JSON.stringify({ error: e.message }));
