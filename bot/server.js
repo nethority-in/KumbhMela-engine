@@ -231,8 +231,11 @@ const server = http.createServer(async (req, res) => {
 
       const messages = body.messages || [{ role: 'user', content: body.text || '' }];
 
-      try {
-        const aiRes = await fetch('https://api.anthropic.com/v1/messages', {
+      // Simple one-retry pattern: if the API is overloaded or rate-limited,
+      // wait 2 seconds and try once more. No exponential backoff math needed
+      // for a small project site.
+      const makeAiCall = async () => {
+        return await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -246,6 +249,15 @@ const server = http.createServer(async (req, res) => {
             messages: messages,
           }),
         });
+      };
+
+      try {
+        let aiRes = await makeAiCall();
+
+        if (aiRes.status === 429 || aiRes.status >= 500) {
+          await new Promise(r => setTimeout(r, 2000));
+          aiRes = await makeAiCall();
+        }
 
         if (!aiRes.ok) {
           const errText = await aiRes.text();
