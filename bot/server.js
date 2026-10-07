@@ -209,6 +209,61 @@ const server = http.createServer(async (req, res) => {
       return res.end(statsHTML(aggregateStats()));
     }
 
+    if (req.method === "POST" && url.pathname === "/chat") {
+      const chunks = [];
+      for await (const c of req) chunks.push(c);
+      let body = {};
+      try { body = JSON.parse(Buffer.concat(chunks).toString("utf8")); } catch {}
+
+      const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
+      if (!ANTHROPIC_KEY) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'API key not configured' }));
+      }
+
+      const systemPrompt = [
+        'You are a helpful assistant for the Simhastha Kumbh Mela 2027 guide website.',
+        'Answer questions about bathing days, crowd estimates, travel tips, and practical info.',
+        'Keep answers concise, friendly, and in the same language the user wrote.',
+        'Never say a day is safe or unsafe. Never recommend skipping a day.',
+        'All crowd figures are estimates. Use the calendar data when possible.',
+      ].join(' ');
+
+      const messages = body.messages || [{ role: 'user', content: body.text || '' }];
+
+      try {
+        const aiRes = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': ANTHROPIC_KEY,
+            'anthropic-version': '2023-06-01',
+          },
+          body: JSON.stringify({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 1024,
+            system: systemPrompt,
+            messages: messages,
+          }),
+        });
+
+        if (!aiRes.ok) {
+          const errText = await aiRes.text();
+          res.writeHead(aiRes.status, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ error: errText }));
+        }
+
+        const aiData = await aiRes.json();
+        const reply = aiData.content?.[0]?.text || 'Sorry, I could not generate a response.';
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ reply }));
+      } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: e.message }));
+      }
+    }
+
     if (req.method === "POST" && url.pathname === "/track-visit") {
       const chunks = [];
       for await (const c of req) chunks.push(c);
