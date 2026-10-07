@@ -221,23 +221,27 @@ const server = http.createServer(async (req, res) => {
         return res.end(JSON.stringify({ error: 'API key not configured' }));
       }
 
-      // Build system prompt dynamically from the current calendar.json
-      const calendar = data.calendar || {};
-      const days = calendar.days || [];
-      const royal = days.filter(d => d.classification === "amrit_snan");
-      const royalList = royal.map(d => d.gregorian_date || "unknown").join(", ");
+      // Build a robust, topic-locked system prompt from calendar data.
+      const royalDays = (data.calendar.days || []).filter(d => d.classification === 'amrit_snan');
+      const royalSummary = royalDays.length
+        ? royalDays.map(d => d.gregorian_date + ' (' + (d.panchang?.tithi || '') + ')').join(', ')
+        : 'No royal bathing days found.';
+
       const systemPrompt = [
-        "You are a helpful assistant for the Simhastha Kumbh Mela 2027 guide website.",
-        "Answer only based on the official calendar data provided below.",
-        "Never guess or invent dates.",
-        "Keep responses concise.",
-        "",
-        "IMPORTANT - Only share dates that match exactly with the calendar data:",
-        royal.length > 0 ? royalList : "No royal bathing days found in calendar.json",
-        "",
-        "If the user asks about dates, check this list and share the exact date.",
-        "If the calendar data is missing, say so politely.",
-      ].join(" ");
+        'You are a dedicated information assistant for the Simhastha Kumbh Mela 2027 at Nashik and Trimbakeshwar, Maharashtra.',
+        'Your sole purpose is to answer questions specifically about this Kumbh Mela: bathing dates, crowd levels, the two bathing sites (Nashik vs Trimbakeshwar), travel tips, and practical visit info.',
+        '',
+        'STRICT RULES:',
+        '- If the user asks about anything NOT directly related to the Kumbh Mela 2027 (e.g., politics, prime minister, general knowledge, sports, entertainment, other festivals or places), reply politely: "I can only help with questions about the Simhastha Kumbh Mela 2027. Try asking about bathing days or travel tips!" Do NOT answer the unrelated question.',
+        '- Keep every answer short: 2-3 sentences maximum. No long explanations.',
+        '- Use the provided calendar data as the only source for dates. Do NOT invent dates or facts.',
+        '- Never call a day safe or unsafe. Never recommend skipping a day.',
+        "- Match the user language: Hindi, Marathi, or English.",
+        'Available reference - Royal bathing days (Amrit Snan) of 2027:',
+        royalSummary,
+        '',
+        'Always work with this data. If a date is not in the calendar above, say it is not confirmed.',
+      ].join('\n');
 
       const messages = body.messages || [{ role: 'user', content: body.text || '' }];
 
