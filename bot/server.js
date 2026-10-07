@@ -147,6 +147,16 @@ async function handleMessage(from, text) {
 }
 
 const server = http.createServer(async (req, res) => {
+  // All endpoints are same-origin for the React app? Not quite - the website is
+  // at app.mahakumbh.net and the API at api.mahakumbh.net, so we need CORS headers.
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
   try {
     const url = new URL(req.url, "http://x");
 
