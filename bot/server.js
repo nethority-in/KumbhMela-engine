@@ -21,7 +21,7 @@ const VERIFY_TOKEN = process.env.WEBHOOK_VERIFY_TOKEN || "replace-me";
 const START_LANG = process.env.START_LANG || "auto";
 
 /* ------------------------------------------------------------------ */
-/* /stats — read-only dashboard of what the bot has answered.        */
+/* /stats - read-only dashboard of what the bot has answered.        */
 /* Protected by a bearer token.                                     */
 /* ------------------------------------------------------------------ */
 const DASHBOARD_TOKEN = process.env.DASHBOARD_TOKEN || "local-dev-token";
@@ -29,11 +29,16 @@ const DASHBOARD_TOKEN = process.env.DASHBOARD_TOKEN || "local-dev-token";
 function aggregateStats() {
   const rows = [];
   try {
-    const raw = fs.readFileSync(store.DATA_DIR + "/conversations.jsonl", "utf8");
+    const raw = fs.readFileSync(
+      store.DATA_DIR + "/conversations.jsonl",
+      "utf8",
+    );
     for (const line of raw.split("\n")) {
       if (line.trim()) rows.push(JSON.parse(line));
     }
-  } catch { /* no conversations yet */ }
+  } catch {
+    /* no conversations yet */
+  }
 
   const byIntent = {};
   const byLang = {};
@@ -56,7 +61,16 @@ function aggregateStats() {
     byDay[day].inr += (r.meta_inr || 0) + (r.llm_inr || 0);
   }
 
-  return { totalFree, totalBillable, totalMetaInr, totalLlmInr, byIntent, byLang, byDay, count: rows.length };
+  return {
+    totalFree,
+    totalBillable,
+    totalMetaInr,
+    totalLlmInr,
+    byIntent,
+    byLang,
+    byDay,
+    count: rows.length,
+  };
 }
 
 function statsHTML(s) {
@@ -68,10 +82,13 @@ function statsHTML(s) {
     .join("");
   const dayRows = Object.entries(s.byDay)
     .sort(([a], [b]) => (a < b ? 1 : -1))
-    .map(([d, v]) => `<tr><td>${d}</td><td>${v.messages}</td><td>₹${v.inr.toFixed(4)}</td></tr>`)
+    .map(
+      ([d, v]) =>
+        `<tr><td>${d}</td><td>${v.messages}</td><td>₹${v.inr.toFixed(4)}</td></tr>`,
+    )
     .join("");
   return `<!doctype html><html><head><meta charset="utf-8">
-<title>Kumbh Bot — Conversation Stats</title>
+<title>Kumbh Bot - Conversation Stats</title>
 <style>
  body { font-family: system-ui, sans-serif; max-width: 840px; margin: 2rem auto; padding: 0 1rem; background:#0d0c0b; color:#f4efe6; }
  h1 { font-weight: 500; font-size: 1.6rem; }
@@ -81,8 +98,8 @@ function statsHTML(s) {
  th { color: #cdc3b4; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; }
  .note { padding: .8rem 1rem; border-left: 3px solid #e0954a; background: rgba(224,149,74,.07); border-radius: 0 .5rem .5rem 0; font-size: .9rem; }
 </style></head><body>
-<h1>Kumbh 2027 — Bot stats</h1>
-<p class="note">Generated from <code>conversations.jsonl</code>. Raw phone numbers are never stored — only a salted hash. ₹ costs use <code>cost.config.json</code> rates (placeholder until Meta rates are pinned).</p>
+<h1>Kumbh 2027 - Bot stats</h1>
+<p class="note">Generated from <code>conversations.jsonl</code>. Raw phone numbers are never stored - only a salted hash. ₹ costs use <code>cost.config.json</code> rates (placeholder until Meta rates are pinned).</p>
 <h2>Summary</h2>
 <table><tr><th>Total conversations</th><td>${s.count}</td></tr>
 <tr><th>Free (within first 1,000/month)</th><td>${s.totalFree}</td></tr>
@@ -137,7 +154,7 @@ async function handleMessage(from, text) {
   try {
     await pool.query(
       "INSERT INTO conversations (phone_hash, lang, role, text, intent, used_llm, meta_inr, llm_inr, window_state, created_at) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,now())",
-      [store.hashPhone(from), lang, "user", text, null, false, 0, 0, "free"]
+      [store.hashPhone(from), lang, "user", text, null, false, 0, 0, "free"],
     );
   } catch (e) {
     console.error("[server] failed to record user message:", e.message);
@@ -145,7 +162,14 @@ async function handleMessage(from, text) {
 
   const res = answer(text, data, lang);
   const usedLlm = false; /* cache-first: the answer engine never calls a model */
-  const spend = await store.record(from, res.intent, usedLlm, g, res.lang, res.text);
+  const spend = await store.record(
+    from,
+    res.intent,
+    usedLlm,
+    g,
+    res.lang,
+    res.text,
+  );
   await sendText(from, res.text);
   const t = store.tier(g);
   console.log(
@@ -213,51 +237,73 @@ const server = http.createServer(async (req, res) => {
       const chunks = [];
       for await (const c of req) chunks.push(c);
       let body = {};
-      try { body = JSON.parse(Buffer.concat(chunks).toString("utf8")); } catch {}
+      try {
+        body = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+      } catch {}
 
       const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
       if (!ANTHROPIC_KEY) {
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'API key not configured' }));
+        res.writeHead(500, { "Content-Type": "application/json" });
+        return res.end(JSON.stringify({ error: "API key not configured" }));
       }
 
       // Build a robust, topic-locked system prompt from calendar data.
-      const royalDays = (data.calendar.days || []).filter(d => d.classification === 'amrit_snan');
+      const royalDays = (data.calendar.days || []).filter(
+        (d) => d.classification === "amrit_snan",
+      );
       const royalSummary = royalDays.length
-        ? royalDays.map(d => d.gregorian_date + ' (' + (d.panchang?.tithi || '') + ')').join(', ')
-        : 'No royal bathing days found.';
+        ? royalDays
+            .map(
+              (d) => d.gregorian_date + " (" + (d.panchang?.tithi || "") + ")",
+            )
+            .join(", ")
+        : "No royal bathing days found.";
 
       const systemPrompt = [
-        'You are a dedicated information assistant for the Simhastha Kumbh Mela 2027 at Nashik and Trimbakeshwar, Maharashtra.',
-        'Your sole purpose is to answer questions specifically about this Kumbh Mela: bathing dates, crowd levels, the two bathing sites (Nashik vs Trimbakeshwar), travel tips, and practical visit info.',
-        '',
-        'STRICT RULES:',
+        "You are a dedicated information assistant for the Simhastha Kumbh Mela 2027 at Nashik and Trimbakeshwar, Maharashtra.",
+        "Your sole purpose is to answer questions specifically about this Kumbh Mela: bathing dates, crowd levels, the two bathing sites (Nashik vs Trimbakeshwar), travel tips, and practical visit info.",
+        "",
+        "STRICT RULES:",
         '- If the user asks about anything NOT directly related to the Kumbh Mela 2027 (e.g., politics, prime minister, general knowledge, sports, entertainment, other festivals or places), reply politely: "I can only help with questions about the Simhastha Kumbh Mela 2027. Try asking about bathing days or travel tips!" Do NOT answer the unrelated question.',
-        '- Keep every answer short: 2-3 sentences maximum. No long explanations.',
-        '- Use the provided calendar data as the only source for dates. Do NOT invent dates or facts.',
-        '- Never call a day safe or unsafe. Never recommend skipping a day.',
+        "- Keep every answer short: 2-3 sentences maximum. No long explanations.",
+        "- Use the provided calendar data as the only source for dates. Do NOT invent dates or facts.",
+        "- Never call a day safe or unsafe. Never recommend skipping a day.",
         "- Match the user language: Hindi, Marathi, or English.",
-        'Available reference - Royal bathing days (Amrit Snan) of 2027:',
+        "Available reference - Royal bathing days (Amrit Snan) of 2027:",
         royalSummary,
-        '',
-        'Always work with this data. If a date is not in the calendar above, say it is not confirmed.',
-      ].join('\n');
+        "",
+        "Always work with this data. If a date is not in the calendar above, say it is not confirmed.",
+      ].join("\n");
 
-      const messages = body.messages || [{ role: 'user', content: body.text || '' }];
+      const messages = body.messages || [
+        { role: "user", content: body.text || "" },
+      ];
+
+      // Log the incoming user message to the conversations table
+      const userText = messages.length > 0 ? messages[messages.length - 1].content : "";
+      try {
+        await pool.query(
+          "INSERT INTO conversations (phone_hash, lang, role, text, intent, used_llm, meta_inr, llm_inr, window_state, created_at) VALUES ($1, $2, $3, $4, NULL, false, 0, 0, $5, now())",
+          ["web-visitor", "en", "user", userText, "free"]
+        );
+      } catch (e) {
+        console.error("[chat] failed to record user message:", e.message);
+      }
+
 
       // Simple one-retry pattern: if the API is overloaded or rate-limited,
       // wait 2 seconds and try once more. No exponential backoff math needed
       // for a small project site.
       const makeAiCall = async () => {
-        return await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST',
+        return await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': ANTHROPIC_KEY,
-            'anthropic-version': '2023-06-01',
+            "Content-Type": "application/json",
+            "x-api-key": ANTHROPIC_KEY,
+            "anthropic-version": "2023-06-01",
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-5-20250929',
+            model: "claude-sonnet-4-5-20250929",
             max_tokens: 1024,
             system: systemPrompt,
             messages: messages,
@@ -269,23 +315,35 @@ const server = http.createServer(async (req, res) => {
         let aiRes = await makeAiCall();
 
         if (aiRes.status === 429 || aiRes.status >= 500) {
-          await new Promise(r => setTimeout(r, 2000));
+          await new Promise((r) => setTimeout(r, 2000));
           aiRes = await makeAiCall();
         }
 
         if (!aiRes.ok) {
           const errText = await aiRes.text();
-          res.writeHead(aiRes.status, { 'Content-Type': 'application/json' });
+          res.writeHead(aiRes.status, { "Content-Type": "application/json" });
           return res.end(JSON.stringify({ error: errText }));
         }
 
         const aiData = await aiRes.json();
-        const reply = aiData.content?.[0]?.text || 'Sorry, I could not generate a response.';
+        const reply =
+          aiData.content?.[0]?.text ||
+          "Sorry, I could not generate a response.";
 
-        res.writeHead(200, { 'Content-Type': 'application/json' });
+        // Log the assistant reply
+        try {
+          await pool.query(
+            "INSERT INTO conversations (phone_hash, lang, role, text, intent, used_llm, meta_inr, llm_inr, window_state, created_at) VALUES ($1, $2, $3, $4, NULL, true, 0, 0, $5, now())",
+            ["web-visitor", "en", "assistant", reply, "free"]
+          );
+        } catch (e) {
+          console.error("[chat] failed to record assistant reply:", e.message);
+        }
+
+        res.writeHead(200, { "Content-Type": "application/json" });
         return res.end(JSON.stringify({ reply }));
       } catch (e) {
-        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.writeHead(500, { "Content-Type": "application/json" });
         return res.end(JSON.stringify({ error: e.message }));
       }
     }
@@ -294,11 +352,13 @@ const server = http.createServer(async (req, res) => {
       const chunks = [];
       for await (const c of req) chunks.push(c);
       let body = {};
-      try { body = JSON.parse(Buffer.concat(chunks).toString("utf8")); } catch {}
+      try {
+        body = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+      } catch {}
       try {
         await pool.query(
           "INSERT INTO website_visits (page, device, lang, created_at) VALUES ($1,$2,$3,NOW())",
-          [body.page || "/", body.device || "desktop", body.lang || "en"]
+          [body.page || "/", body.device || "desktop", body.lang || "en"],
         );
       } catch {}
       return ack(res);
@@ -306,25 +366,41 @@ const server = http.createServer(async (req, res) => {
 
     if (req.method === "GET" && url.pathname === "/stats/json") {
       try {
-        const [convRes, visitRes, byLang, byIntent, byDay, topMsgs] = await Promise.all([
-          pool.query("SELECT COUNT(*)::int AS total_conversations, COUNT(*) FILTER (WHERE window_state='free_allowance')::int AS free_count FROM conversations"),
-          pool.query("SELECT COUNT(*)::int AS total_visits FROM website_visits"),
-          pool.query("SELECT lang, COUNT(*)::int AS count FROM conversations GROUP BY lang"),
-          pool.query("SELECT intent, COUNT(*)::int AS count FROM conversations WHERE intent IS NOT NULL GROUP BY intent"),
-          pool.query("SELECT DATE(created_at) AS day, COUNT(*)::int AS messages FROM conversations GROUP BY DATE(created_at) ORDER BY day DESC"),
-          pool.query("SELECT text, COUNT(*)::int AS count FROM conversations WHERE role='user' GROUP BY text ORDER BY count DESC LIMIT 10"),
-        ]);
-        return res.end(JSON.stringify({
-          total_conversations: convRes.rows[0].total_conversations,
-          free_conversations: convRes.rows[0].free_count,
-          total_visits: visitRes.rows[0].total_visits,
-          by_lang: byLang.rows,
-          by_intent: byIntent.rows,
-          by_day: byDay.rows,
-          top_messages: topMsgs.rows,
-        }));
+        const [convRes, visitRes, byLang, byIntent, byDay, topMsgs] =
+          await Promise.all([
+            pool.query(
+              "SELECT COUNT(*)::int AS total_conversations, COUNT(*) FILTER (WHERE window_state='free_allowance')::int AS free_count FROM conversations",
+            ),
+            pool.query(
+              "SELECT COUNT(*)::int AS total_visits FROM website_visits",
+            ),
+            pool.query(
+              "SELECT lang, COUNT(*)::int AS count FROM conversations GROUP BY lang",
+            ),
+            pool.query(
+              "SELECT intent, COUNT(*)::int AS count FROM conversations WHERE intent IS NOT NULL GROUP BY intent",
+            ),
+            pool.query(
+              "SELECT DATE(created_at) AS day, COUNT(*)::int AS messages FROM conversations GROUP BY DATE(created_at) ORDER BY day DESC",
+            ),
+            pool.query(
+              "SELECT text, COUNT(*)::int AS count FROM conversations WHERE role='user' GROUP BY text ORDER BY count DESC LIMIT 10",
+            ),
+          ]);
+        return res.end(
+          JSON.stringify({
+            total_conversations: convRes.rows[0].total_conversations,
+            free_conversations: convRes.rows[0].free_count,
+            total_visits: visitRes.rows[0].total_visits,
+            by_lang: byLang.rows,
+            by_intent: byIntent.rows,
+            by_day: byDay.rows,
+            top_messages: topMsgs.rows,
+          }),
+        );
       } catch (e) {
-        res.writeHead(500); return res.end(JSON.stringify({ error: e.message }));
+        res.writeHead(500);
+        return res.end(JSON.stringify({ error: e.message }));
       }
     }
 
@@ -332,7 +408,10 @@ const server = http.createServer(async (req, res) => {
       const chunks = [];
       for await (const c of req) chunks.push(c);
       const raw = Buffer.concat(chunks).toString("utf8");
-      const isTwilio = req.headers["content-type"]?.includes("application/x-www-form-urlencoded") || raw.startsWith("From=");
+      const isTwilio =
+        req.headers["content-type"]?.includes(
+          "application/x-www-form-urlencoded",
+        ) || raw.startsWith("From=");
 
       if (isTwilio) {
         // Parse Twilio form-urlencoded form data.
