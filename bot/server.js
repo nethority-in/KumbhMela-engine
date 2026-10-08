@@ -369,19 +369,19 @@ const server = http.createServer(async (req, res) => {
         const [convRes, visitRes, byLang, byIntent, byDay, topMsgs] =
           await Promise.all([
             pool.query(
-              "SELECT COUNT(*)::int AS total_conversations, COUNT(*) FILTER (WHERE window_state='free_allowance')::int AS free_count FROM conversations",
+              "SELECT COUNT(*)::int AS total_conversations, COUNT(*) FILTER (WHERE window_state='free_allowance')::int AS free_count FROM conversations WHERE role='user'",
             ),
             pool.query(
               "SELECT COUNT(*)::int AS total_visits FROM website_visits",
             ),
             pool.query(
-              "SELECT lang, COUNT(*)::int AS count FROM conversations GROUP BY lang",
+              "SELECT lang, COUNT(*)::int AS count FROM conversations WHERE role='user' GROUP BY lang",
             ),
             pool.query(
               "SELECT intent, COUNT(*)::int AS count FROM conversations WHERE intent IS NOT NULL GROUP BY intent",
             ),
             pool.query(
-              "SELECT DATE(created_at) AS day, COUNT(*)::int AS messages FROM conversations GROUP BY DATE(created_at) ORDER BY day DESC",
+              "SELECT DATE(created_at) AS day, COUNT(*)::int AS messages FROM conversations WHERE role='user' GROUP BY DATE(created_at) ORDER BY day DESC",
             ),
             pool.query(
               "SELECT text, COUNT(*)::int AS count FROM conversations WHERE role='user' GROUP BY text ORDER BY count DESC LIMIT 10",
